@@ -1,0 +1,385 @@
+/* line 5, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 37, ../sass/_definitions.scss */
+body {
+  max-width: 100%;
+  font-size: 15px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  color: #555555;
+  font-family: "Lato", Helvetica, sans-serif;
+}
+
+/* line 45, ../sass/_definitions.scss */
+body, html {
+  height: 100%;
+}
+
+/* line 48, ../sass/_definitions.scss */
+.modal {
+  background: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+/* line 54, ../sass/_definitions.scss */
+.fullwidth {
+  width: 100%;
+  height: auto;
+}
+
+/* line 58, ../sass/_definitions.scss */
+.threefourth {
+  width: 60%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+/* line 63, ../sass/_definitions.scss */
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", "Lato", Arial, Helvetica, sans-serif;
+  margin: 0 0 1em 0;
+}
+
+/* line 68, ../sass/_definitions.scss */
+h1 {
+  font-size: 2.625em;
+}
+
+/* line 69, ../sass/_definitions.scss */
+h2 {
+  font-size: 2em;
+}
+
+/* line 70, ../sass/_definitions.scss */
+h3 {
+  font-size: 1.5em;
+}
+
+/* line 71, ../sass/_definitions.scss */
+h4 {
+  font-size: 1.3125em;
+}
+
+/* line 72, ../sass/_definitions.scss */
+h5 {
+  font-size: 1em;
+}
+
+/* line 73, ../sass/_definitions.scss */
+.clearfix {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 76, ../sass/_definitions.scss */
+.ib {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 80, ../sass/_definitions.scss */
+.fleft {
+  float: left;
+}
+
+/* line 83, ../sass/_definitions.scss */
+.fright {
+  float: right;
+}
+
+/* line 86, ../sass/_definitions.scss */
+.pageBlocks {
+  position: relative;
+}
+/* line 88, ../sass/_definitions.scss */
+.pageBlocks p {
+  margin-bottom: 1em;
+}
+
+/* line 92, ../sass/_definitions.scss */
+button {
+  border: 0;
+  border-radius: 5px;
+  line-height: 1;
+  padding: 8px;
+  font-family: "Helvetica Neue", "Lato", Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+/* line 97, ../sass/_definitions.scss */
+input {
+  line-height: 1;
+  padding: 7px;
+  font-family: "Helvetica Neue", "Lato", Arial, Helvetica, sans-serif;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #DDD #EEE #EEE #DDD;
+}
+
+/* line 102, ../sass/_definitions.scss */
+.bg-prim {
+  background: #E40707;
+}
+
+/* line 105, ../sass/_definitions.scss */
+.bg-sec {
+  background: #DB6A47;
+}
+
+/* line 108, ../sass/_definitions.scss */
+.bg-acc {
+  background: #3ADEED;
+}
+
+/* line 111, ../sass/_definitions.scss */
+.bg-soft {
+  background: #999999;
+}
+
+/* line 114, ../sass/_definitions.scss */
+.bg-hard {
+  background: #555555;
+}
+
+/* line 117, ../sass/_definitions.scss */
+.bg-light {
+  background: #EEEEEE;
+}
+
+/* line 120, ../sass/_definitions.scss */
+.bg-dark {
+  background: #333333;
+}
+
+/* line 123, ../sass/_definitions.scss */
+.prim {
+  color: #E40707;
+}
+
+/* line 126, ../sass/_definitions.scss */
+.sec {
+  color: #DB6A47;
+}
+
+/* line 129, ../sass/_definitions.scss */
+.acc {
+  color: #3ADEED;
+}
+
+/* line 132, ../sass/_definitions.scss */
+.soft {
+  color: #999999;
+}
+
+/* line 135, ../sass/_definitions.scss */
+.hard {
+  color: #555555;
+}
+
+/* line 138, ../sass/_definitions.scss */
+.light {
+  color: #EEEEEE;
+}
+
+/* line 141, ../sass/_definitions.scss */
+.dark {
+  color: #333333;
+}
+
+/* line 144, ../sass/_definitions.scss */
+.white {
+  color: white;
+}
+
+/* line 147, ../sass/_definitions.scss */
+.bb {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+/* line 153, ../sass/_definitions.scss */
+a {
+  outline: 0;
+}
+/* line 155, ../sass/_definitions.scss */
+a:visited {
+  color: inherit;
+}
+
+/* line 3, ../sass/accept.scss */
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  background: url("http://cdn.orobind.com/srv/static/imagesV2/accept-bg.jpg");
+  background-size: cover;
+}
+
+/* line 8, ../sass/accept.scss */
+.pageTitle {
+  color: white;
+}
+
+/* line 11, ../sass/accept.scss */
+.errorMessages {
+  color: white;
+  width: 300px;
+  text-align: center;
+  padding: 10px;
+  background: rgba(228, 7, 7, 0.8);
+  margin-top: 30px;
+  font-size: 1.25em;
+  box-sizing: border-box;
+  border: 2px solid #E40707;
+  display: none;
+}
+/* line 14, ../sass/accept.scss */
+.errorMessages .errorCode {
+  font-weight: bold;
+}
+/* line 17, ../sass/accept.scss */
+.errorMessages .specialError {
+  display: none;
+}
+
+/* line 21, ../sass/accept.scss */
+.successMessages {
+  color: white;
+  width: 300px;
+  text-align: center;
+  padding: 10px;
+  background: rgba(19, 220, 187, 0.8);
+  margin-top: 30px;
+  font-size: 1.25em;
+  box-sizing: border-box;
+  border: 2px solid #13DCBB;
+  display: none;
+}
+
+/* line 25, ../sass/accept.scss */
+.acceptWrap {
+  width: 300px;
+  position: relative;
+}
+/* line 27, ../sass/accept.scss */
+.acceptWrap .acceptInner {
+  border-radius: 20px;
+  background: white;
+  color: #555555;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+/* line 32, ../sass/accept.scss */
+.acceptWrap .acceptInner input, .acceptWrap .acceptInner button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 1.25em;
+  box-sizing: border-box;
+  height: 50px;
+}
+/* line 36, ../sass/accept.scss */
+.acceptWrap .acceptInner input {
+  border-color: #d9d9d9;
+  position: relative;
+}
+/* line 38, ../sass/accept.scss */
+.acceptWrap .acceptInner input.error {
+  border: 2px solid #E40707;
+}
+/* line 43, ../sass/accept.scss */
+.acceptWrap a {
+  color: #47b8db;
+  font-style: italic;
+}
+/* line 46, ../sass/accept.scss */
+.acceptWrap .btn {
+  background: #333333;
+  color: white;
+  border-radius: 0;
+  background: -moz-linear-gradient(top, #d44343 0%, #d44343 50%, #c83737 50%, #c83737 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d44343), color-stop(50%, #d44343), color-stop(50%, #c83737), color-stop(100%, #c83737));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d44343 0%, #d44343 50%, #c83737 50%, #c83737 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to bottom, #d44343 0%, #d44343 50%, #c83737 50%, #c83737 100%);
+  /* W3C */
+}

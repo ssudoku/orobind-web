@@ -1,0 +1,446 @@
+@import "definitions";
+@import "popup";
+@import "grid";
+
+body {
+	background:white; width:100%; overflow-x:hidden;
+}
+.hidden {
+	display:none;
+}
+.wrapper {
+	position:relative; right:0; transition:right 0.5s ease-in-out;
+}
+.pageBlocks {
+	position:relative;
+}
+.centerWrap {
+	width:100%; margin:auto;
+}
+.topBand {
+	background:darken(complement($secondary-color),46%); padding:20px 0;
+	.centerLogo {
+		height:32px; width:auto; margin:auto; display:block;
+	}
+	.sectionTitle, .subTitle {
+		color:white; margin-top:6px; font-weight:300; text-align:center; margin-bottom:0;
+	}
+	.subTitle {
+		font-weight:400; font-size:1.5em;
+	}
+	.errorTitle {
+		color:$primary-color; margin-top:6px; text-align:center; margin-bottom:0; display:none;
+		font-weight:400; font-size:1.5em;
+	}
+}
+body.paymentError {
+	.topBand {
+		.errorTitle {
+			display:block;
+		}
+		.subTitle {
+			display:none;
+		}
+	}
+}
+body.paymentSuccess {
+	.topBand {
+		.subTitle {
+			.fa {
+				font-size:0.75em;
+			}
+		}
+	}
+}
+.newPayment {
+	text-align:center; margin-top:25px;
+	.topRow {
+		display:flex; flex-direction:column; justify-content:space-center; align-items:center;
+		p {
+			color:$soft-grey; margin:8px 0; font-weight:bold;
+		}
+		.creditBalance {
+			color:$primary-color;
+		}
+	}
+	.sectionTitle {
+		margin-bottom:15px; font-weight:normal;
+	}
+	.subTitle {
+		font-weight:bold; color:$secondary-color;
+		.fa-rupee {
+			font-size:0.875em;
+		}
+	}
+	.choiceRow {
+		.planChoice {
+			margin:auto; width:320px; font-size:0.875em;
+			td {
+				border-right:1px solid $light-grey; border-left:1px solid $light-grey; padding:10px; text-align:center;
+				color:lighten($hard-grey,5%);
+				&:first-child {
+					color:lighten($soft-grey,10%); text-align:left; display:none;
+				}
+				.label {
+					color:lighten($soft-grey,5%); font-size:0.8em; display:block;
+					font-weight:normal; margin-bottom:5px;
+				}
+				.offerPeriod {
+					background:complement($primary-color); color:white; font-weight:bold;
+					border-radius:5px; padding:20px 0; position:relative;
+					&.suggested {
+						background:#BC53C1;
+					}
+					.sessCount {
+						font-size:2em; display:block; line-height:1;
+					}
+					.suggested {
+						position: absolute; right:-8px; top:-8px; z-index:11;
+					}
+				}
+			}
+			tr {
+				&:first-child {
+					td {
+						border:0; background:transparent;
+					}
+				}
+				&:last-child {
+					td {
+						border-bottom:1px solid $light-grey;
+					}
+				}
+				&:nth-child(2) {
+					td {
+						font-weight:bold; font-size:1.25em;
+						&:first-child {
+							font-weight:normal; font-size:1em;
+						}
+					}
+				}
+				&:nth-child(4) {
+					td {
+						font-weight:bold;
+						&:first-child {
+							font-weight:normal;
+						}
+						.discountPercent {
+							color:complement($primary-color); display:block
+						}
+					}
+				}
+				&:nth-child(5) {
+					td {
+						&:first-child {
+							font-weight:normal; color:$soft-grey;
+						}
+					}
+				}
+				&:last-child {
+					td:first-child {
+						border:0;
+					}
+				}
+			}
+			.choice {
+				background-color:$soft-grey; color:white; font-weight:bold;
+				padding:8px; border-radius:5px; cursor:pointer; transition:background-color 0.3s ease;
+				.btnText {
+					position:relative; left:8px; transition: all 0.3s ease;
+				}
+				i {
+					opacity:0; transition: all 0.3s ease; position:relative; left:-8px;
+				}
+				&:hover {
+					background-color:$hard-grey;
+				}
+				&.active {
+					background:$hard-grey;
+					.btnText {
+						left:0;
+					}
+					i {
+						opacity:1; left:0;
+					}
+				}
+			}
+		}
+	}
+	.submitForm {
+		display:none;
+	}
+	.summaryTable {
+		margin:25px auto; width:320px; display:none;
+		td {
+			border:1px solid $light-grey; font-size:1em; padding:10px; color:$soft-grey;
+			&:last-child {
+				text-align:right; font-weight:bold;
+			}
+			.fa-rupee{
+				font-size:0.875em;
+			}
+		}
+		tr:nth-child(odd)
+		{
+			td {
+				background:lighten(complement($secondary-color),42%);
+			}
+		}
+		tr:last-child {
+			td:last-child {
+				color:$dark-grey;
+			}
+		}
+	}
+	.formWrap {
+		text-align:center; margin:25px auto; margin-bottom:0;
+		.pageCta {
+			width:320px; height:50px; background:$primary-color; color:white;
+			font-size:1.25em; font-weight:bold; border-radius:0;
+		}
+	}
+	.promoForm {
+		display:flex; justify-content:center; align-items:center; flex-direction:row;
+		input, button {
+			height:35px; width:150px; font-size:1em; box-sizing:border-box;
+		}
+		input {
+			margin-right:19px;
+			&.error {
+				border:2px solid $primary-color;
+			}
+		}
+		button {
+			width:100px;
+		}
+		.promoCta {
+			background-color:$soft-grey; color:white; font-weight:bold;
+			padding:8px; border-radius:5px; cursor:pointer; transition:background-color 0.3s ease;
+			&:hover {
+				background:$hard-grey;
+			}
+		}
+	}
+}
+.paymentWelcome {
+	.centerLogo {
+		display:block; margin:auto; margin-top:20px;
+		height:45px; width:auto;
+	}
+	.paymentContainer{
+		background:lighten(complement($secondary-color),41%); margin-top:30px; padding-bottom:30px;
+	}
+	.userInfo {
+		display:flex; flex-direction:row; justify-content:space-between; align-items:center; 
+		padding:0px 15px; width:100%; margin:auto; box-sizing:border-box; margin-top:20px;
+		p {
+			margin-bottom:0;
+		}
+		.creditBalance {
+			color:$primary-color; font-weight:bold;
+		}
+	}
+	.planContainer {
+		width:100%; margin:auto; box-sizing:border-box; padding:15px;
+		.orderCol {
+			padding:15px; display:none;
+			.orderInner {
+				box-shadow:0px 0px 8px 0px rgba($soft-grey,0.45); border-radius:2px; padding:14px; background:white;
+				.orderTable {
+					width:100%; margin-bottom:19px;
+					td, th {
+						padding:8px; text-align:center; color:$soft-grey;
+						font-size:0.875em; font-weight:bold;
+						&:first-child {
+							text-align:left;
+						}
+						&:last-child {
+							text-align:right;
+						}
+					}
+					th {
+						background:$hard-grey; color:white; font-weight:bold;
+					}
+					tr:nth-child(odd) {
+						td {
+							background:lighten(complement($secondary-color),41%);
+						}
+					}
+					tr:last-child td:last-child { 
+						font-weight:bold; color:$secondary-color;
+					}
+					td {
+						border:1px solid lighten($light-grey,3%);
+					}
+				}
+			}
+		}
+		.plan {
+			padding-top:15px; padding-bottom:15px; transition:padding 0.4s ease;
+			&.full {
+				width:100%; background:transparent; padding:15px; box-sizing:border-box;
+				.planInner {
+					display:flex; flex-direction:row; justify-content:space-between; align-items:center;
+					box-sizing:border-box; padding:10px 30px; background:white;
+					.success {
+						order:4; width:200px; margin:0; display:initial;
+					}
+					.planCta {
+						display:none;
+					}
+					.planDiscount, .duration, .planQty {
+						margin:0; padding:0; flex:none; font-size:1.25em; color:$hard-grey;
+					}
+					.duration {
+						order:1; color:lighten(complement($secondary-color),20%);
+					}
+					.planDiscount {
+						order:2;
+					}
+					.planQty {
+						order:3;
+					}
+				}
+				&:hover {
+					padding:15px;
+					.planInner:hover {
+						padding:10px 30px;
+					}
+				}
+			}
+			&.third {
+				.planDiscount {
+					color:$secondary-color;
+				}
+			}
+			&.second {
+				.planDiscount {
+					color:lighten($secondary-color,18%);
+				}
+			}
+			.success {
+				display:none; padding:10px; margin:auto; margin-bottom:21px; 
+				color:$soft-grey; border-radius:0; width:80%; font-size:1.25em;
+			}
+			.planInner {
+				background-color:white; text-align:center;
+				transition:padding 0.4s ease; box-sizing:border-box;
+				box-shadow:0px 0px 8px 0px rgba($soft-grey,0.45); border-radius:2px;
+				/*&.chosen {
+					border:1px solid transparent;
+					.duration {
+						color:lighten(complement($secondary-color),20%);
+					}
+					.planCta {
+						display:none;
+					}
+					.success {
+						display:block;
+					}
+				}*/
+			}
+			&:hover {
+				padding-bottom:10px;
+				.planInner{
+					&:hover {
+						padding-top:5px;
+					}
+				}
+			}
+			.planCta {
+				width:80%; box-sizing:border-box; background-color:$secondary-color; color:white; margin-bottom:25px;
+				border-radius:0; padding:10px; text-align:center; font-weight:bold; font-size:1.25em;
+				transition:background-color 0.4s ease;
+				&:hover {
+					background-color:$hard-grey;
+				}
+			}
+			.duration {
+				line-height:1; padding:0;
+			}
+			.planCost {
+				font-size:1em;
+			}
+			.planDiscount {
+				font-weight:bold; font-size:1.25em; padding:10px 0;
+			}
+		}
+	}
+}
+.paymentMain {
+	background:white;
+}
+@media screen and (min-width:768px) {
+	.topBand {
+		.sectionTitle {
+			font-size:2.75em; margin-top:35px;
+		}
+		.subTitle {
+			margin-bottom:30px;
+		}
+		.errorTitle {
+			margin-bottom:30px;
+		}
+	}
+	.newPayment {
+		.formWrap {
+			margin-bottom:25px;
+		}
+		.topRow {
+			margin-bottom:15px;
+			p {
+				margin:0;
+			}
+			&.centerWrap{
+				width:648px;
+			}
+		}
+		.sectionTitle {
+			margin-bottom:5px;
+		}
+		.summaryTable {
+			width:640px; margin:35px auto;
+		}
+		.choiceRow {
+			.planChoice {
+				margin:35px auto; width:640px; font-size:1em;
+				td {
+					border:1px solid lighten($light-grey,2%);
+					&:first-child {
+						display:table-cell;
+					}
+					.label {
+						display:none;
+					}
+				}
+			}
+		}
+	}
+	.centerWrap {
+		width:500px;
+	}
+	.paymentWelcome {
+		.sectionTitle {
+			margin-top:0px;
+		}
+		.planContainer {
+			.plan {
+				margin-bottom:0px;
+			}
+		}
+		.userInfo {
+			margin-top:0px; font-size:1.25em;
+			padding-bottom:20px; padding-top:20px;
+		}
+	}
+}
+@media screen and (min-width:992px) {
+	.centerWrap {
+		width:720px;
+	}
+}
+@media screen and (min-width:1280px) {
+	.centerWrap {
+		width:840px;
+	}
+}

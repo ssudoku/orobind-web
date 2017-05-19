@@ -1,0 +1,247 @@
+/* line 22, ../sass/blogFooter.scss */
+.blogFooter {
+  background: #262626;
+  color: white;
+  padding: 20px;
+  color: #999999;
+  -moz-display: flex;
+  -webkit-display: flex;
+  -ms-display: flex;
+  display: flex;
+  flex-direction: -moz-column;
+  flex-direction: -webkit-column;
+  flex-direction: -ms-column;
+  flex-direction: column;
+  align-items: -moz-center;
+  align-items: -webkit-center;
+  align-items: -ms-center;
+  align-items: center;
+  justify-content: -moz-center;
+  justify-content: -webkit-center;
+  justify-content: -ms-center;
+  justify-content: center;
+}
+/* line 26, ../sass/blogFooter.scss */
+.blogFooter .social {
+  font-size: 1em;
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+/* line 28, ../sass/blogFooter.scss */
+.blogFooter .social a {
+  transition: 0.5s ease-in-out;
+  text-decoration: none;
+  color: white;
+}
+/* line 30, ../sass/blogFooter.scss */
+.blogFooter .social a:hover {
+  text-shadow: 0px 0px 5px white;
+}
+/* line 34, ../sass/blogFooter.scss */
+.blogFooter .social i {
+  margin-left: 15px;
+  font-size: 1.25em;
+}
+/* line 38, ../sass/blogFooter.scss */
+.blogFooter .footercenter {
+  text-align: center;
+  padding: 0;
+  flex-grow: 1;
+}
+/* line 41, ../sass/blogFooter.scss */
+.blogFooter .footerNav {
+  margin-top: 15px;
+  -moz-display: flex;
+  -webkit-display: flex;
+  -ms-display: flex;
+  display: flex;
+  flex-direction: -moz-column;
+  flex-direction: -webkit-column;
+  flex-direction: -ms-column;
+  flex-direction: column;
+  align-items: -moz-center;
+  align-items: -webkit-center;
+  align-items: -ms-center;
+  align-items: center;
+  justify-content: -moz-center;
+  justify-content: -webkit-center;
+  justify-content: -ms-center;
+  justify-content: center;
+}
+/* line 44, ../sass/blogFooter.scss */
+.blogFooter .footerNav .linkCols {
+  margin-top: 10px;
+}
+/* line 47, ../sass/blogFooter.scss */
+.blogFooter .footerNav a {
+  font-size: 1em;
+  text-decoration: none;
+  color: #EEEEEE;
+  font-weight: bold;
+  margin-left: 15px;
+  transition: 0.25s ease-in-out;
+  color: white;
+}
+/* line 50, ../sass/blogFooter.scss */
+.blogFooter .footerNav a:first-child {
+  margin-left: 0;
+}
+/* line 53, ../sass/blogFooter.scss */
+.blogFooter .footerNav a:hover {
+  color: #3ADEED;
+}
+/* line 58, ../sass/blogFooter.scss */
+.blogFooter .footerNav ul a {
+  color: #999999;
+  font-weight: 300;
+}
+/* line 61, ../sass/blogFooter.scss */
+.blogFooter .footerNav ul li {
+  margin: 10px 0;
+  font-size: 0.875em;
+}
+/* line 66, ../sass/blogFooter.scss */
+.blogFooter .footerlogo {
+  height: 30px;
+  width: auto;
+  display: block;
+  margin: auto;
+  flex-grow: 0;
+}
+
+/* line 71, ../sass/blogFooter.scss */
+.footerLinks {
+  background: #333333;
+  color: white;
+  padding: 20px;
+  color: #999999;
+  -moz-display: flex;
+  -webkit-display: flex;
+  -ms-display: flex;
+  display: flex;
+  flex-direction: -moz-column;
+  flex-direction: -webkit-column;
+  flex-direction: -ms-column;
+  flex-direction: column;
+  align-items: -moz-center;
+  align-items: -webkit-center;
+  align-items: -ms-center;
+  align-items: center;
+  justify-content: -moz-center;
+  justify-content: -webkit-center;
+  justify-content: -ms-center;
+  justify-content: center;
+}
+/* line 75, ../sass/blogFooter.scss */
+.footerLinks a {
+  font-size: 1em;
+  text-decoration: none;
+  color: #EEEEEE;
+  font-size: 0.875em;
+  margin-left: 15px;
+  transition: 0.25s ease-in-out;
+  color: white;
+}
+/* line 78, ../sass/blogFooter.scss */
+.footerLinks a:first-child {
+  margin-left: 0;
+}
+/* line 81, ../sass/blogFooter.scss */
+.footerLinks a:hover {
+  color: #3ADEED;
+}
+/* line 85, ../sass/blogFooter.scss */
+.footerLinks .navCols {
+  margin: 15px 0;
+}
+/* line 88, ../sass/blogFooter.scss */
+.footerLinks .category {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.25em;
+}
+/* line 92, ../sass/blogFooter.scss */
+.footerLinks ol li {
+  margin: 10px 0;
+  list-style-type: decimal;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 98, ../sass/blogFooter.scss */
+  .blogFooter {
+    flex-direction: -moz-row;
+    flex-direction: -webkit-row;
+    flex-direction: -ms-row;
+    flex-direction: row;
+    align-items: -moz-flex-start;
+    align-items: -webkit-flex-start;
+    align-items: -ms-flex-start;
+    align-items: flex-start;
+    justify-content: -moz-space-between;
+    justify-content: -webkit-space-between;
+    justify-content: -ms-space-between;
+    justify-content: space-between;
+  }
+  /* line 101, ../sass/blogFooter.scss */
+  .blogFooter .footerNav {
+    margin: 0;
+    flex-direction: -moz-row;
+    flex-direction: -webkit-row;
+    flex-direction: -ms-row;
+    flex-direction: row;
+    align-items: -moz-flex-start;
+    align-items: -webkit-flex-start;
+    align-items: -ms-flex-start;
+    align-items: flex-start;
+    justify-content: -moz-center;
+    justify-content: -webkit-center;
+    justify-content: -ms-center;
+    justify-content: center;
+  }
+  /* line 104, ../sass/blogFooter.scss */
+  .blogFooter .footerNav .navCols {
+    margin: 0 10px;
+    text-align: left;
+  }
+  /* line 107, ../sass/blogFooter.scss */
+  .blogFooter .footerNav .linkCols {
+    margin-top: 20px;
+  }
+  /* line 111, ../sass/blogFooter.scss */
+  .blogFooter .social {
+    margin-top: 0;
+    text-align: right;
+  }
+  /* line 114, ../sass/blogFooter.scss */
+  .blogFooter .footercenter {
+    padding: 0 15px;
+  }
+
+  /* line 118, ../sass/blogFooter.scss */
+  .footerLinks {
+    flex-direction: -moz-row;
+    flex-direction: -webkit-row;
+    flex-direction: -ms-row;
+    flex-direction: row;
+    align-items: -moz-flex-start;
+    align-items: -webkit-flex-start;
+    align-items: -ms-flex-start;
+    align-items: flex-start;
+    justify-content: -moz-center;
+    justify-content: -webkit-center;
+    justify-content: -ms-center;
+    justify-content: center;
+  }
+  /* line 121, ../sass/blogFooter.scss */
+  .footerLinks .navCols {
+    margin: 0 25px;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 129, ../sass/blogFooter.scss */
+  .blogFooter .footerNav .navCols {
+    margin: 0 20px;
+  }
+}

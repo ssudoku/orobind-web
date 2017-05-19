@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>My Profile</title>
+		<link rel="icon" type="image/ico" href="http://cdn.orobind.com/srv/static/imagesV2/favicon.ico">
+		<link href="css/profile.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+		<link href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	</head>
+
+<body>
+	<svg class="defs" version="1.1" id="Layer_0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+	</svg>
+	<div class="sidenav">
+		<nav class="sidenavlist">
+			<a href="#login">Login</a>
+			<a href="#logout">Logout</a>
+		</nav>
+	</div>
+	<div class="wrapper">
+	<!-- top navigation -->
+		<section class="pageBlocks topMenu flexRow" id="topMenu">
+			<nav class="topNav clearfix">
+				<a href="index.html" class="topLogo fleft">
+					<img src="http://cdn.orobind.com/srv/static/imagesV2/logo-color.png" data-switch="http://cdn.orobind.com/srv/static/imagesV2/logo-white.png">
+				</a>
+				<a href="#login" class="login animate fright">Login</a>
+				<a href="#logout" class="logout animate fright"><span class="userName">Rekha Mukharjee</span> Logout</a>
+				<button class="menutoggle"><i class="fa fa-bars fa-lg"></i></button>
+			</nav>
+		</section>
+	<!-- top navigation ends -->
+
+	<!-- profile cover starts -->
+		<section class="pageBlocks cover flexRow vcenter sbetween" id="cover">
+			<div class="narrowcenter coverBg">
+				<div class="coverHead">
+					<h4 class="userName">Rekha Mukherjee</h4>
+					<!--<button class="overflow"><i class="fa fa-ellipsis-v"></i></button>-->
+				</div>
+				<svg class="profilePicMask" width="229" height="250" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<defs>
+						<clippath id="hexy">
+							<path fill="white" d="M0,84.528C0,70.271,10.104,52.776,22.45,45.65L92.427,5.267c12.347-7.126,32.554-7.126,44.901,0l69.976,40.385
+					 		c12.347,7.125,22.45,24.62,22.45,38.877v80.754c0,14.257-10.104,31.752-22.45,38.878l-69.976,40.385
+					 		c-12.348,7.126-32.555,7.126-44.901,0L22.45,204.161C10.104,197.035,0,179.54,0,165.284V84.528z"/>
+						</clippath>
+					</defs>
+					<foreignObject clip-path="url(#hexy)" width="229" height="250">
+    				<img id="profilePicSrc" src="images/temp-female.png" />
+  				</foreignObject>
+					<path fill="#FFFFFF" d="M114.877,3.922c7.701,0,15.155,1.753,20.452,4.809l69.977,40.385c11.084,6.397,20.448,22.614,20.448,35.413
+		v80.756c0,12.798-9.364,29.016-20.448,35.413l-69.977,40.385c-5.297,3.057-12.751,4.81-20.452,4.81
+		c-7.702,0-15.156-1.753-20.45-4.81L24.45,200.697C13.365,194.299,4,178.082,4,165.284V84.528c0-12.798,9.365-29.016,20.45-35.414
+		L94.426,8.732C99.723,5.675,107.177,3.922,114.877,3.922 M114.877-0.078c-8.138,0-16.276,1.782-22.45,5.345L22.45,45.65
+		C10.104,52.776,0,70.271,0,84.528v80.757c0,14.256,10.104,31.751,22.45,38.877l69.977,40.386c6.173,3.563,14.312,5.345,22.45,5.345
+		c8.139,0,16.277-1.782,22.451-5.345l69.977-40.385c12.346-7.126,22.449-24.621,22.449-38.878V84.529
+		c0-14.257-10.104-31.752-22.449-38.877L137.328,5.267C131.154,1.704,123.016-0.078,114.877-0.078L114.877-0.078z"/>
+					<!--<image xlink:href="images/dummy.jpg" width="250" height="250" />-->
+        </svg>
+				<!--<img class="profilePic" src="images/dummy.jpg">-->
+			</div>
+		</section>
+	<!-- profile cover ends -->
+
+	<!-- profile menu starts -->
+		<section class="pageBlocks tabBar" id="tabBar">
+			<div class="narrowcenter flexRow vcenter sbetween card">
+				<div class="tabButtonWrap current" id="account">
+					<img class="tabButtonImg" src="images/icon-account-blue.png" data-switch="images/icon-account.png">
+					<h4 class="tabTitle">Account</h4>
+				</div>
+				<!--<div class="tabButtonWrap" id="ofc">
+					<img class="tabButtonImg" src="images/icon-ofc.png" data-switch="images/icon-ofc-blue.png">
+					<h4 class="tabTitle">Fitness Score</h4>
+				</div>
+				<div class="tabButtonWrap" id="kitchen">
+					<img class="tabButtonImg" src="images/icon-kitchen.png" data-switch="images/icon-kitchen-blue.png">
+					<h4 class="tabTitle">Kitchen Score</h4>
+				</div>-->
+				<div class="tabButtonWrap" id="sessions">
+					<img class="tabButtonImg" src="images/icon-sessions.png" data-switch="images/icon-sessions-blue.png">
+					<h4 class="tabTitle">Sessions</h4>
+				</div>
+				<div class="tabButtonWrap" id="wallet">
+					<img class="tabButtonImg" src="images/icon-wallet.png" data-switch="images/icon-wallet-blue.png">
+					<h4 class="tabTitle">Wallet</h4>
+				</div>
+				<!--<div class="tabButtonWrap" id="journal">
+					<img class="tabButtonImg" src="images/icon-journal.png" data-switch="images/icon-journal-blue.png">
+					<h4 class="tabTitle">Journal</h4>
+				</div>-->
+			</div>
+		</section>
+	<!-- profile menu ends -->
+
+	<!-- account section starts -->
+		<section class="pageBlocks infoSection sectionAccount" id="sectionAccount">
+			<div class="narrowcenter card softClear">
+				<div class="col-md-6 profileWrap">
+					<div class="profileInner">
+						<form class="profileForm disabled">
+							<h3 class="infoTitle">Contact Details</h3>
+							<div class="formRow flexRow sbetween vcenter">
+								<p class="formLabel">Name</p>
+								<input class="profileFormFields name" type="text" name="name" placeholder="Name" value="Rekha Mukherjee">
+							</div>
+							<div class="formRow flexRow sbetween vcenter">
+								<p class="formLabel">Email</p>
+								<input class="profileFormFields email" type="text" name="email" placeholder="Email" value="mrekha86@gmail.com" disabled>
+							</div>
+							<div class="formRow flexRow sbetween vcenter">
+								<p class="formLabel">Mobile</p>
+								<input class="profileFormFields mobile" type="text" name="mobileNumber" placeholder="Mobile" value="9739697210">
+							</div>
+							<div class="formRow flexRow sbetween vcenter">
+								<p class="formLabel">Password</p>
+								<input class="profileFormFields password" type="password" name="password" placeholder="Password" value="rekha@123">
+							</div>
+							<div class="formRow flexRow sbetween vcenter">
+								<p class="formLabel">Location</p>
+								<input class="profileFormFields address" type="text" name="location" placeholder="My locality" value="Indiranagar">
+							</div>
+							<button class="mainCta editProfile"><span class="editText">Edit</span><span class="saveText">Save</span></button>
+						</form>
+					</div>
+				</div>
+				<div class="col-md-6 profileWrap">
+					<div class="profileInner">
+						<form class="statsForm disabled">
+							<h3 class="infoTitle">Vital Stats</h3>
+							<div class="formRow flexRow sbetween vcenter">
+								<p class="formLabel">Height</p>
+								<input class="profileFormFields height" name="height" type="text" placeholder="Height" value="168">
+							</div>
+							<div class="formRow flexRow sbetween vcenter">
+								<p class="formLabel">Weight</p>
+								<input class="profileFormFields weight" name="weight" type="text" placeholder="Weight" value="92">
+							</div>
+							<div class="formRow flexRow sbetween vcenter">
+								<p class="formLabel">Date of Birth</p>
+								<input class="profileFormFields dateOfBirth" name="dob" type="text" placeholder="DD-MM-YYYY" value="16-07-1986">
+							</div>
+							<div class="formRow flexRow sbetween vcenter">
+								<p class="formLabel">Gender</p>
+								<select class="profileFormFields gender" name="gender">
+									<option data-short="F">Female</option>
+									<option data-short="M">Male</option>
+								</select>
+							</div>
+							<div class="formRow flexRow sbetween vcenter">
+								<p class="formLabel">Goals</p>
+								<select class="profileFormFields" disabled>
+									<option data-short="W">Weightloss</option>
+									<option data-short="F">Injury Management</option>
+								</select>
+							</div>
+							<button class="mainCta editStats"><span class="editText">Edit</span><span class="saveText">Save</span></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- account section ends -->
+
+	<!-- sessions section starts -->
+		<section class="pageBlocks sessions" id="sessions">
+			<div class="narrowcenter card">
+				<div class="tabRow flexRow">
+					<button class="sessionsTab booking active">Book Sessions</button>
+					<button class="sessionsTab upcoming">Upcoming</button>
+					<button class="sessionsTab past">Past Sessions</button>
+				</div>
+				<!-- book sessions -->
+				<div class="tabSection book">
+					<div class="dateRow flexRow">
+						<button class="dateBlock day1"><span class="value">Tue 08</span><span class="caption">Tomorrow</span></button>
+						<button class="dateBlock day2"><span class="value">Wed 09</span><span class="caption">Day After</span></button>
+						<button class="dateBlock day3"><span class="value">Thu 10</span><span class="caption">2 Days Later</span></button>
+					</div>
+					<div class="inventory">
+						<!--<p class="coach">Workout with <span class="coachName">Shailendar Kumar</span></p>-->
+						<h3 class="inventoryTitle">Choose session start time</h3>
+						<select class="timeOfDay">
+							<option disabled selected>Select time-range</option>
+							<option data-order="1">Morning : 5am - 10am</option>
+							<option data-order="2">Noon : 11am - 4pm</option>
+							<option data-order="3">Evening : 5pm - 9pm</option>
+						</select>
+						<br>
+						<div class="slotContainer" data-order="1">
+						</div>
+						<div class="slotContainer" data-order="2">
+						</div>
+						<div class="slotContainer" data-order="3">
+						</div>
+						<!--<span class="inventoryWrap blocked">06:00 AM</span>
+						<span class="inventoryWrap">07:30 AM</span>
+						<span class="inventoryWrap">09:00 AM</span>
+						<span class="inventoryWrap blocked">10:00 AM</span>
+						<span class="inventoryWrap blocked">11:00 AM</span>
+						<span class="inventoryWrap">12:00 AM</span><br>
+						<span class="inventoryWrap">01:00 PM</span>
+						<span class="inventoryWrap">02:00 PM</span>
+						<span class="inventoryWrap blocked">05:30 PM</span>
+						<span class="inventoryWrap blocked">07:45 PM</span>
+						<span class="inventoryWrap blocked">09:00 PM</span>-->
+						<button class="inventoryCta">Proceed</button>
+					</div>
+				</div>
+				<!-- book sessions ends -->
+				<!-- upcoming sessions -->
+				<div class="tabSection upcoming">
+					<table class="sessionsTable">
+						<thead>
+							<tr>
+								<th>Coach</th>
+								<th>Date</th>
+								<th>Start Time</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="coach">
+									<img class="coachImg" src="images/instructor.jpg">
+									<span class="coachName">Manoj Prabhakar</span>
+								</td>
+								<td class="date">
+									Dec 08, 2015
+								</td>
+								<td class="startTime">
+									8.30 AM
+								</td>
+								<td class="action">
+									<span class="notice">Sorry. Timings for this session can't be changed now.</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="coach">
+									<img class="coachImg" src="images/instructor.jpg">
+									<span class="coachName">Manoj Prabhakar</span>
+								</td>
+								<td class="date">
+									Dec 08, 2015
+								</td>
+								<td class="startTime">
+									8.30 AM
+								</td>
+								<td class="action">
+									<button class="actionItem">
+										<span class="hideSmall">Cancel / Reschedule</span>
+										<i class="fa fa-history hideLarge"></i>
+									</button>
+								</td>
+							</tr>
+							<tr>
+								<td class="coach">
+									<img class="coachImg" src="images/instructor.jpg">
+									<span class="coachName">Manoj Prabhakar</span>
+								</td>
+								<td class="date">
+									Dec 08, 2015
+								</td>
+								<td class="startTime">
+									8.30 AM
+								</td>
+								<td class="action">
+									<button class="actionItem">
+										<span class="hideSmall">Cancel / Reschedule</span>
+										<i class="fa fa-history hideLarge"></i>
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="modifySession">
+						<div class="chooseBlock">
+							<button class="back"><i class="fa fa-long-arrow-left"></i> Back</button>
+							<h4 class="modifyTitle">Session Selected</h4>
+							<p class="sessionSelected"><span class="dateTime">Dec 14, 2015 | 08:30 AM</span> with <span class="coachName">Manoj Prabhakar</span></p>
+							<h4 class="actionTitle">What do you want to do?</h4>
+							<button class="modifyAction reschedule">Reschedule Session</button><br>
+							<button class="modifyAction cancel">Cancel Session</button>
+						</div>
+						<div class="rescheduleBlock">
+							<button class="back"><i class="fa fa-long-arrow-left"></i> Back</button>
+							<h4 class="reason">Why do you want to reschedule?</h4>
+							<div class="options">
+								<span class="option">
+									<input type="radio" class="rescheduleOption" name="reasons" id="reason1">
+									<label for="reason1">Travel</label>
+								</span>
+								<span class="option">
+									<input type="radio" class="rescheduleOption" name="reasons" id="reason2">
+									<label for="reason2">Health</label>
+								</span>
+								<span class="option">
+									<input type="radio" class="rescheduleOption" name="reasons" id="reason3">
+									<label for="reason3">Emergency</label>
+								</span>
+								<span class="option">
+									<input type="radio" class="rescheduleOption" name="reasons" id="reason4">
+									<label for="reason4">Other</label>
+								</span>
+							</div>
+							<div class="othersExpand">
+								<textarea class="othersSpecify" placeholder="Specify Reason (required)"></textarea>
+							</div>
+							<h4 class="timeTitle">Choose a new time-slot</h4>
+							<div class="timeSlotRow flexRow">
+								<button class="dateBlock day1" data-date="2016-01-08"><span class="value">Tue 08</span></button>
+								<button class="dateBlock day2" data-date="2016-01-09"><span class="value">Wed 09</span></button>
+								<button class="dateBlock day3" data-date="2016-01-10"><span class="value">Thu 10</span></button>
+							</div>
+							<div class="inventory">
+								<select class="reschTimes">
+									<option disabled selected>Select time-range</option>
+									<option data-order="1">Morning : 5am - 10am</option>
+									<option data-order="2">Noon : 11am - 4pm</option>
+									<option data-order="3">Evening : 5pm - 9pm</option>
+								</select>
+								<button class="rescheduleCta">Finish</button>
+							</div>
+						</div>
+						<div class="cancelBlock">
+							<button class="back"><i class="fa fa-long-arrow-left"></i> Back</button>
+							<h4 class="reason">Why do you want to cancel?</h4>
+							<form class="cancelForm">
+								<div class="options">
+									<input type="radio" class="cancelOption" name="reasons" id="reason5" checked>
+									<label for="reason5">Travel</label>
+									<input type="radio" class="cancelOption" name="reasons" id="reason6">
+									<label for="reason6">Health</label>
+									<input type="radio" class="cancelOption" name="reasons" id="reason7">
+									<label for="reason7">Emergency</label>
+									<input type="radio" class="cancelOption" name="reasons" id="reason8">
+									<label for="reason8">Other</label>
+								</div>
+								<div class="othersExpand">
+									<textarea class="othersSpecify" placeholder="Specify Reason (required)"></textarea>
+								</div>
+								<!--<h4 class="feedbackTitle">What can we do to help?</h4>
+								<div class="feedback">
+									<textarea class="feedbackText" placeholder="Your valuable inputs here (required)"></textarea>
+								</div>-->
+								<button class="rescheduleCta">Finish</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- upcoming sessions ends -->
+				<!-- past sessions -->
+				<div class="tabSection past">
+					<table class="sessionsTable">
+						<thead>
+							<tr>
+								<th>Coach</th>
+								<th>Date</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="coach">
+									<img class="coachImg" src="images/instructor.jpg">
+									<span class="coachName">Manoj Prabhakar</span>
+								</td>
+								<td class="date">
+									Dec 08, 2015 | 4:30 PM
+								</td>
+								<td class="action">
+									<button class="actionItem">
+										<span class="hideSmall">Report Issue</span>
+										<span class="hideLarge">Help!</span>
+									</button>
+								</td>
+							</tr>
+							<tr>
+								<td class="coach">
+									<img class="coachImg" src="images/instructor.jpg">
+									<span class="coachName">Manoj Prabhakar</span>
+								</td>
+								<td class="date">
+									Dec 08, 2015 | 4:30 PM
+								</td>
+								<td class="action">
+									<button class="actionItem">
+										<span class="hideSmall">Report Issue</span>
+										<span class="hideLarge">Help!</span>
+									</button>
+								</td>
+							</tr>
+							<tr>
+								<td class="coach">
+									<img class="coachImg" src="images/instructor.jpg">
+									<span class="coachName">Manoj Prabhakar</span>
+								</td>
+								<td class="date">
+									Dec 08, 2015 | 4:30 PM
+								</td>
+								<td class="action">
+									<button class="actionItem">
+										<span class="hideSmall">Report Issue</span>
+										<span class="hideLarge">Help!</span>
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- past sessions ends -->
+			</div>
+		</section>
+	<!-- sessions section ends -->
+
+	<!-- wallet section starts -->
+		<section class="pageBlocks wallet" id="wallet">
+			<div class="narrowcenter card">
+				<div class="tabRow flexRow">
+					<button class="walletTab subscriptions active">Subscriptions</button>
+					<button class="walletTab payments">Payment History</button>
+				</div>
+				<div class="tabSection subscriptionStatus">
+					<div class="infoRow flexRow sbetween">
+						<p class="label">Plan</p>
+						<p class="value planName">Orobind Pro</p>
+					</div>
+					<div class="infoRow flexRow sbetween">
+						<p class="label">Status</p>
+						<p class="value planStatus">Active</p>
+					</div>
+					<div class="infoRow flexRow sbetween">
+						<p class="label">Valid Till</p>
+						<p class="value planExpiryDate">Jan 25, 2016</p>
+					</div>
+					<div class="infoRow flexRow sbetween">
+						<p class="label">Sessions Left</p>
+						<p class="value planSessionsLeft">15</p>
+					</div>
+					<button class="renewCta">Renew Subscription</button>
+					<div class="renew step1">
+						<button class="back"><i class="fa fa-long-arrow-left"></i> Back</button>
+						<h4 class="renewTitle">Step 1 of 2 - Choose a plan</h4>
+						<div class="plans">
+							<div class="plan">
+								<div class="planDetails">
+									<h4 class="planTitle">Injury Pro</h4>
+									<p class="goals">2 Kg/month</p>
+									<div class="benefits">
+										<ul class="benefitsList">
+											<li class="benefitsListItem unique">1 doctor intervention</li>
+											<li class="benefitsListItem unique">2 physio sessions</li>
+											<li class="benefitsListItem unique">2 diet interventions</li>
+											<li class="benefitsListItem unique">Free Experience Session</li>
+											<li class="benefitsListItem">8 Workout Sessions</li>
+											<li class="benefitsListItem">Lifestyle assistance</li>
+											<!--<li class="benefitsListItem">Grocery assistance</li>
+											<li class="benefitsListItem">Success Kit</li>-->
+											<li class="benefitsListItem">Offline Coach Support</li>
+										</ul>
+									</div>
+									<p class="price">&#8377; 7499/month</p>
+								</div>
+								<button class="planCta">Choose</button>
+							</div>
+							<div class="plan">
+								<div class="planDetails">
+									<h4 class="planTitle">Orobind Pro</h4>
+									<p class="goals">3 Kg/month</p>
+									<div class="benefits">
+										<ul class="benefitsList">
+											<li class="benefitsListItem unique">1 doctor intervention</li>
+											<li class="benefitsListItem unique">2 diet interventions</li>
+											<li class="benefitsListItem unique">Free Experience Session</li>
+											<li class="benefitsListItem">8 Workout Sessions</li>
+											<li class="benefitsListItem">Lifestyle assistance</li>
+											<!--<li class="benefitsListItem">Grocery assistance</li>
+											<li class="benefitsListItem">Success Kit</li>-->
+											<li class="benefitsListItem">Offline Coach Support</li>
+										</ul>
+									</div>
+									<p class="price">&#8377; 5999/month</p>
+								</div>
+								<button class="planCta">Choose</button>
+							</div>
+							<div class="plan">
+								<div class="planDetails">
+									<h4 class="planTitle">Orobind Move</h4>
+									<p class="goals">1 Kg/month</p>
+									<div class="benefits">
+										<ul class="benefitsList">
+											<li class="benefitsListItem unique">1 doctor intervention</li>
+											<li class="benefitsListItem unique">1 diet intervention</li>
+											<li class="benefitsListItem">6 Workout Sessions</li>
+											<li class="benefitsListItem">Recipe assistance</li>
+											<!--<li class="benefitsListItem">Grocery assistance</li>
+											<li class="benefitsListItem">Success Kit</li>-->
+										</ul>
+									</div>
+									<p class="price">&#8377; 5999/month</p>
+								</div>
+								<button class="planCta">Choose</button>
+							</div>
+						</div>
+					</div>
+					<div class="renew step2">
+						<button class="back"><i class="fa fa-long-arrow-left"></i> Back</button>
+						<h4 class="renewTitle">Step 2 of 2 - Choose duration</h4>
+						<div class="durationPlans">
+							<div class="durationPlan plan1 flexRow sbetween vcenter">
+								<h4 class="planDuration">1 Month</h4>
+								<p class="pricing">&#8377; 5999</p>
+							</div>
+							<div class="durationPlan plan2 flexRow sbetween vcenter">
+								<h4 class="planDuration">2 Months</h4>
+								<p class="discount">5 % off</p>
+								<p class="pricing">&#8377; 11398</p>
+							</div>
+							<div class="durationPlan plan3 flexRow sbetween vcenter">
+								<h4 class="planDuration">3 Months</h4>
+								<p class="discount">10 % off</p>
+								<p class="pricing">&#8377; 16197</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabSection paymentHistory">
+					<table class="paymentsTable">
+						<thead>
+							<tr>
+								<th>Date</th>
+								<th>Transaction No:</th>
+								<th>Mode</th>
+								<th>Amount</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>25-11-2015 | 2:55 PM</td>
+								<td>ORBDPAYTMl337qwerty</td>
+								<td>Online</td>
+								<td>&#8377; 7999</td>
+							</tr>
+							<tr>
+								<td>25-11-2015 | 2:55 PM</td>
+								<td>ORBDPAYTMl337qwerty</td>
+								<td>Online</td>
+								<td>&#8377; 7999</td>
+							</tr>
+							<tr>
+								<td>25-11-2015 | 2:55 PM</td>
+								<td>ORBDPAYTMl337qwerty</td>
+								<td>Online</td>
+								<td>&#8377; 7999</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+	<!-- wallet section ends -->
+
+	<!-- Footer -->
+		<section class="pageBlocks footer" id="footer">
+			<img src="http://cdn.orobind.com/srv/static/imagesV2/logo-white.png" class="footerlogo">
+			<div class="footercenter">
+				<nav class="footerNav">
+					<a href="http://www.orobind.com">Home</a>
+					<a href="/about?tag=about">About Us</a>
+					<!--<a href="orobind.html#policy">Policies</a>
+					<a href="orobind.html#trust">Are the Coaches Trusted?</a>
+					<a href="http://blog.orobind.com">Blog</a>-->
+					<a href="#" class="topDownload">Download App</a>
+				</nav>
+			</div>
+			<span class="social">
+				Join the Conversation
+				<a class="fblink" href="http://www.facebook.com/orobind"><i class="fa fa-facebook-square"></i></a>
+				<a class="twlink" href="http://twitter.com/orobind"><i class="fa fa-twitter-square"></i></a>
+			</span>
+		</section>
+	<!-- Footer Ends -->
+	</div>
+</body>
+
+	<!--include jquery-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/utils.js"></script>
+	<script src="js/moment.min.js"></script>
+	<script src="js/superSelect.js"></script>
+	<script src="js/api.js"></script>
+	<script src="js/controller.js"></script>
+	<script src="js/path.min.js"></script>
+	<script src="js/profile.js"></script>
+</html>

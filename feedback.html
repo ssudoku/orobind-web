@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>#thegoodfight starts now!</title>
+		<link rel="icon" type="image/ico" href="http://cdn.orobind.com/srv/static/imagesV2/favicon.ico">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.min.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+		<link href="css/feedback.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+		<link href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	</head>
+
+<body>
+	<div class="sidenav">
+		<nav class="sidenavlist">
+			<a href="http://www.orobind.com">Home</a>
+			<a href="/about?tag=about">About Us</a>
+			<a href="#" class="callback">Request Callback <i class="fa fa-phone"></i></a>
+		</nav>
+	</div>
+	<div class="wrapper">
+	<!-- top navigation -->
+		<section class="pageBlocks topBar">
+			<nav class="topNav clearfix sticky">
+				<a href="http://www.orobind.com" class="topLogo fleft">
+					<img src="http://cdn.orobind.com/srv/static/imagesV2/logo-color.png" data-switch="http://cdn.orobind.com/srv/static/imagesV2/logo-color.png">
+				</a>
+				<a href="#" class="callback animate dark">Try it for free</a>
+				<button class="menutoggle"><i class="fa fa-bars fa-lg"></i></button>
+			</nav>
+		</section>
+	<!-- top navigation ends -->
+
+	<br><br><br><br>
+	<!-- main content starts -->
+		<section class="pageBlocks mainContent">
+			<h1 class="pageTitle">How has Orobind changed your life? Let us know</h1>
+			<div class="container clearfix">
+				<div class="mainCol col-sm-8">
+					<div class="inner card">
+						<h3 class="colTitle">share your fitness story</h3>
+						<div class="testiFormWrap">
+							<form class="testiForm" action="/submitfeedback" id="testiForm" method="POST">
+								<div class="formRow">
+									<input type="text" class="testiFormField half" name="userName" placeholder="Your Name">
+									<input type="text" class="testiFormField half" name="userEmail" placeholder="Email">
+								</div>
+								<div class="formRow">
+									<textarea class="testiFormField" name="userFeedback" placeholder="Write your story here"></textarea>
+								</div>
+								<div class="formRow">
+									<input type="file" class="testiFormField fileUpload" name="userPic" placeholder="Upload your picture (optional)">
+									<div class="fauxFileInput">
+										<p class="label">Upload your picture (optional)</p>
+										<button class="fauxButton">Browse</button>
+									</div>
+								</div>
+								<button class="testiFormCta">Publish Testimonial</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="sideBar col-sm-4">
+					<div class="inner card">
+						<h3 class="colTitle">Video Testimonials</h3>
+						<div class="videoRow">
+							<div class="thumb">
+								<img class="videoThumb" src="images/thumb-kinjal.jpg">
+								<i class="fa fa-youtube-play playerLaunch"></i>
+							</div>
+							<div class="details">
+								<p class="desc">Now I can run faster than my daughter can cycle</p>
+								<h4 class="featuring">Kinjal</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- main content ends -->
+	<br><br>
+
+	<!-- Footer -->
+		<section class="pageBlocks footer" id="footer">
+			<img src="http://cdn.orobind.com/srv/static/imagesV2/logo-white.png" class="footerlogo">
+			<div class="footercenter">
+				<nav class="footerNav">
+					<a href="http://www.orobind.com">Home</a>
+					<a href="/about?tag=about">About Us</a>
+					<a href="http://blog.orobind.com">Blog</a>
+				</nav>
+			</div>
+			<span class="social">
+				Join the Conversation
+				<a class="fblink" href="http://www.facebook.com/orobind"><i class="fa fa-facebook-square"></i></a>
+				<a class="twlink" href="http://twitter.com/orobind"><i class="fa fa-twitter-square"></i></a>
+			</span>
+		</section>
+	<!-- Footer Ends -->
+	</div>
+	<div class="modal">&nbsp;</div>
+	<div class="leadsModal">
+		<a class="close">X</a>
+		<h3 class="modalTitle">Try For Free</h3>
+		<p class="post hit">Thanks for showing interest in Orobind. We will reach out to you shortly.</p>
+		<p class="context">Fill in the details below and we will reach out within 48 hours to get you started</p>
+		<button class="post hit">Close</button>
+		<p class="post miss">Uh oh! Looks like something went wrong. Please try again.</p>
+		<form id="requestACallForm2" class="callbackForm" method="POST" action="/requestcall">
+			<div class="fieldRow">
+				<input type="text" class="callbackField" placeholder="Your Name" name="cName">
+				<p class="errorText">Only alphabets &amp; spaces</p>
+			</div>
+			<div class="fieldRow">
+				<input type="text" class="callbackField" placeholder="Email" name="email">
+				<p class="errorText">Yourname@website.com</p>
+			</div>
+			<div class="fieldRow">
+				<input type="text" class="callbackField" placeholder="Mobile Number" name="mobile">
+				<p class="errorText">10 digit mobile number</p>
+			</div>
+			<button class="callbackCTA">Get Started</button>
+		</form>
+	</div>
+</body>
+
+	<!--include jquery-->
+	<script src="js/jquery.min.js"></script>
+	<script src="http://malsup.github.com/jquery.form.js"></script>
+	<script src="js/reviews.js"></script>
+	<script>
+	!function(){
+		var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+		analytics.load("UWAGXNiqNQEuN2MG3ZYka6SNoWNgr6fi");
+		analytics.page({
+			"type":"page",
+			"name":"user reviews page",
+			"timestamp": new Date(),
+			"properties":{
+				"url":window.location.href,
+				"path":window.location.pathname
+			}
+		});
+	}}();
+	</script>
+
+</html>

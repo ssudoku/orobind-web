@@ -1,0 +1,81 @@
+@import "definitions";
+@import "popup";
+@import "grid";
+
+body {
+	background:white; width: auto; font-weight: 300; font-size: 16px; height: auto;
+}
+.softClear {
+	&:after {
+		content: " "; zoom:1; height: 0; width: 100%;
+		display: block; clear: both;
+	}
+}
+.messageModal .messageModalInner .close, .messageModal.small .messageModalInner .close {
+	background: #47d4d4; padding: 0;
+}
+.flexRow {
+	@include vendorProp(display,flex); @include vendorStyle(flex-direction, row);
+}
+.flexCol {
+	@include vendorProp(display,flex); @include vendorStyle(flex-direction, column);
+}
+.sbetween {
+	@include vendorStyle(justify-content, space-between);
+}
+.vcenter {
+	@include vendorStyle(align-items, center);
+}
+.hidden {
+	display:none;
+}
+.wrapper {
+	position:relative; right:0; transition:right 0.5s ease-in-out;
+	&.active {
+		right:260px;
+		.topNav {
+			&.sticky {
+				transition:left 0.5s ease-in-out; left:-260px;
+			}
+		}
+	}
+}
+.pageBlocks {
+	position:relative;
+}
+.sectionTitle {
+	font-size:2em; font-weight:bold; text-align:center; margin-top:25px; margin-bottom:12px; color:$dark-grey;
+	&.light {
+		color:white;
+	}
+}
+.card {
+	box-shadow: 1px 1px 3px 0 rgba($soft-grey,0.4); box-sizing: border-box;
+	padding: 5px; background: white;
+}
+.narrowcenter {
+	margin: auto; width: 100%;
+}
+@media screen and (min-width:768px) {
+	.narrowcenter {
+		width: 600px;
+	}
+}
+@media screen and (min-width:992px) {
+	.narrowcenter {
+		width: 840px;
+	}
+}
+.requestCta {
+	background: #F4593C; color: white; text-transform: uppercase;
+	font-size: 1.125em; font-weight: 400; height: 40px;
+}
+.messageCaption {
+	font-size: 0.875em; margin-top: 15px;
+}
+.messageTitle {
+	text-transform: uppercase; margin-bottom: 5px; font-weight: 400;
+}
+.message {
+	text-align: center;
+}

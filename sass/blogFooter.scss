@@ -1,0 +1,134 @@
+$primary-color: #E40707;
+$secondary-color:#DB6A47;
+$accent-color:#3ADEED;
+$soft-grey:#999999;
+$hard-grey:#555555;
+$light-grey: #EEEEEE;
+$dark-grey: #333333;
+
+@mixin vendorStyle($style,$property) {
+	-moz-#{$style}: #{$property};
+	-webkit-#{$style}: #{$property};
+	-ms-#{$style}: #{$property};
+	#{$style}: #{$property};
+}
+@mixin vendorProp($style,$property) {
+	#{$style}: -moz-#{$property};
+	#{$style}: -webkit-#{$property};
+	#{$style}: -ms-#{$property};
+	#{$style}: #{$property};
+}
+
+.blogFooter {
+	background:darken($dark-grey,5%); color:white; padding:20px; color: $soft-grey;
+	@include vendorStyle(display,flex); @include vendorProp(flex-direction,column);
+	@include vendorProp(align-items,center); @include vendorProp(justify-content, center);
+	.social {
+		font-size:1em; text-align:center; display:block; margin:auto; margin-top:20px;
+		a {
+			transition:0.5s ease-in-out; text-decoration:none; color: white;
+			&:hover {
+				text-shadow:0px 0px 5px white;
+			}
+		}
+		i {
+			margin-left:15px; font-size:1.25em;
+		}
+	}
+	.footercenter {
+		text-align:center; padding:0; flex-grow: 1;
+	}
+	.footerNav {
+		 margin-top:15px; @include vendorStyle(display,flex); @include vendorProp(flex-direction,column);
+	 	@include vendorProp(align-items,center); @include vendorProp(justify-content, center);
+		.linkCols {
+			margin-top: 10px;
+		}
+		a {
+			font-size:1em; text-decoration:none; color: $light-grey; font-weight: bold;
+			margin-left:15px; transition:0.25s ease-in-out; color: white;
+			&:first-child {
+				margin-left:0;
+			}
+			&:hover {
+				color:$accent-color;
+			}
+		}
+		ul {
+			a {
+	 			color:$soft-grey; font-weight: 300;
+	 		}
+			li {
+				margin: 10px 0; font-size: 0.875em;
+			}
+		}
+	}
+	.footerlogo {
+		height:30px; width:auto; display:block; margin:auto;
+		flex-grow: 0;
+	}
+}
+.footerLinks {
+	background:$dark-grey; color:white; padding:20px; color: $soft-grey;
+	@include vendorStyle(display,flex); @include vendorProp(flex-direction,column);
+	@include vendorProp(align-items,center); @include vendorProp(justify-content, center);
+	a {
+		font-size:1em; text-decoration:none; color: $light-grey; font-size: 0.875em;
+		margin-left:15px; transition:0.25s ease-in-out; color: white;
+		&:first-child {
+			margin-left:0;
+		}
+		&:hover {
+			color:$accent-color;
+		}
+	}
+	.navCols {
+		margin: 15px 0;
+	}
+	.category {
+		font-weight: bold; text-transform: uppercase; font-size: 1.25em;
+	}
+	ol {
+		li {
+			margin: 10px 0; list-style-type: decimal;
+		}
+	}
+}
+@media screen and (min-width:768px){
+	.blogFooter {
+		@include vendorProp(flex-direction,row);
+		@include vendorProp(align-items,flex-start); @include vendorProp(justify-content, space-between);
+		.footerNav {
+			margin: 0; @include vendorProp(flex-direction,row);
+			@include vendorProp(align-items,flex-start); @include vendorProp(justify-content, center);
+			.navCols {
+				margin: 0 10px; text-align: left;
+			}
+			.linkCols {
+				margin-top: 20px;
+			}
+		}
+		.social {
+			margin-top:0; text-align:right;
+		}
+		.footercenter {
+			padding:0 15px;
+		}
+	}
+	.footerLinks {
+		@include vendorProp(flex-direction,row);
+		@include vendorProp(align-items,flex-start); @include vendorProp(justify-content, center);
+		.navCols {
+			margin: 0 25px;
+		}
+	}
+}
+@media screen and (min-width:992px){
+	.blogFooter {
+		.footerNav {
+			.navCols {
+				margin: 0 20px;
+			}
+		}
+	}
+}

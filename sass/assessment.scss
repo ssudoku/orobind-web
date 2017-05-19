@@ -1,0 +1,157 @@
+@import "definitions";
+@import "popup";
+@import "grid";
+
+$bodfon : 'Source Sans Pro', Arial, Helvetica, sans-serif;
+$titfon : 'Raleway', Helvetica, sans-serif;
+
+body {
+	background:#FCFCFF; width: auto; font-weight: 300; font-size: 16px;
+	font-family: $bodfon; padding: 10px; height: auto;
+}
+.messageModal .messageModalInner .close, .messageModal.small .messageModalInner .close {
+	background: #47d4d4;
+}
+h1, h2, h3, h4, h5 {
+	font-family: $titfon; letter-spacing: 0.5px;
+}
+input[type="text"] {
+	height: 40px; border:1px solid $soft-grey; font-size: 1em; font-weight: 300;
+	font-family: $bodfon; box-sizing: border-box; border-radius: 5px;
+	&.error {
+		border: 2px solid $primary-color;
+	}
+}
+button {
+	height: 40px; background: $accent-color; color: white; font-family: $titfon;
+	text-transform: uppercase; font-size: 1em; font-weight: bold;
+}
+.flexRow {
+	@include vendorProp(display,flex); @include vendorStyle(flex-direction, row);
+}
+.flexCol {
+	@include vendorProp(display,flex); @include vendorStyle(flex-direction, column);
+}
+.sbetween {
+	@include vendorStyle(justify-content, space-between);
+}
+.vcenter {
+	@include vendorStyle(align-items, center);
+}
+.hidden {
+	display:none;
+}
+.formBlock {
+	text-align: center; position: relative; margin-bottom: 20px;
+	display: none;
+	&#part1 {
+		display: block;
+	}
+	.sbetween {
+		margin-bottom: 15px; @include vendorStyle(flex-direction,column);
+		@include vendorStyle(align-items, center);
+		.label {
+			flex-grow: 1; font-family: $titfon; font-weight: 600;
+		}
+		.fields {
+			width: 200px;
+		}
+		select.fields {
+			height: 40px; border-radius: 5px; border:1px solid $soft-grey;
+		}
+	}
+}
+.pageTitle {
+	text-align: center; color: $accent-color; font-weight: 400;
+	text-transform: uppercase; font-size: 1.75em;
+}
+.formTitle {
+	font-weight: 400; font-size: 1.25em;
+}
+.formWrap {
+	width: 100%; background: white; box-shadow: 0 0 3px 0 rgba($soft-grey,0.3);
+	box-sizing: border-box; padding: 10px;
+	.errorText {
+		display: none;
+	}
+	.cta, .fields {
+		display: block; margin: 10px auto; width: 100%;
+		&.part2 {
+			background: #f4593c;
+		}
+		&.half {
+			display: inline-block; width: auto; margin-left: 10px;
+		}
+		&.back {
+			background: #4e5858;
+		}
+	}
+	.kitchen, .equips, .fitness {
+		background: #4e5858;
+	}
+}
+.score {
+	font-weight: bold; font-size: 3.25em; color: #F4593C;
+}
+.questionBlock {
+	width: 100%; text-align: left; border-bottom: 1px solid $light-grey;
+	margin: 10px auto; padding: 10px 0; box-sizing: border-box;
+	&.error {
+		padding: 10px; border: 1px solid $primary-color;
+	}
+	input[type="radio"],label {
+		margin-bottom: 15px;
+	}
+	input[type="radio"] {
+		margin-right: 10px;
+	}
+}
+.question {
+	font-size: 1em; margin-bottom: 10px; font-weight: 600; color: $accent-color;
+	&.hard {
+		color: $hard-grey; font-weight: 400; font-size: 1.125em;
+	}
+}
+.emphasize, .key {
+	color: $accent-color; font-weight: 600;
+}
+.caption {
+	margin-bottom: 10px; margin-top: -15px;
+}
+label {
+	text-transform: uppercase; font-family: $titfon; font-weight: 600;
+}
+@media screen and (min-width:768px){
+	body {
+		padding: 20px;
+	}
+	.formWrap {
+		width: 540px; margin: auto; padding: 20px;
+		.cta, .fields {
+			width: 300px;
+		}
+	}
+	.formTitle {
+		font-size: 1.5em;
+	}
+	.formBlock {
+		.sbetween {
+			@include vendorStyle(flex-direction,row);
+		}
+		.label {
+			font-weight: 300; font-family: $bodfon; text-align: left;
+		}
+		.value {
+			text-align: right;
+		}
+	}
+	.pageTitle {
+		font-size: 2em;
+	}
+	input[type="text"],button {
+		height: 50px;
+	}
+	.questionBlock {
+		width: 320px;
+	}
+}

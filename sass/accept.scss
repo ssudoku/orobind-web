@@ -1,0 +1,53 @@
+@import "definitions";
+
+body {
+	display: flex; flex-direction: column; font-size:14px;
+	justify-content: center; align-items: center; 
+	background:url("http://cdn.orobind.com/srv/static/imagesV2/accept-bg.jpg"); background-size:cover;
+}
+.pageTitle {
+	color:white;
+}
+.errorMessages {
+	color:white; width:300px; text-align:center; padding:10px; background:rgba($primary-color,0.8);
+	margin-top:30px; font-size:1.25em; box-sizing:border-box; border:2px solid $primary-color; display:none;
+	.errorCode {
+		font-weight:bold;
+	}
+	.specialError {
+		display:none;
+	}
+}
+.successMessages {
+	color:white; width:300px; text-align:center; padding:10px; background:rgba(#13DCBB,0.8);
+	margin-top:30px; font-size:1.25em; box-sizing:border-box; border:2px solid #13DCBB; display:none;
+}
+.acceptWrap {
+	width: 300px; position:relative;
+	.acceptInner {
+		border-radius: 20px; background: white; color: $hard-grey; text-align:center;
+		box-sizing: border-box; padding: 20px; box-shadow:0 0 5px 0 rgba(black,0.2);
+	}
+	.acceptInner {
+		input, button {
+			display:block; width:100%; margin-bottom:15px;
+			font-size:1.25em; box-sizing:border-box; height:50px;
+		}
+		input {
+			border-color:lighten($soft-grey,25%); position:relative;
+			&.error {
+				border:2px solid $primary-color;
+			}
+		}
+	}
+	a {
+		color:complement($secondary-color); font-style:italic;
+	}
+	.btn {
+		background:$dark-grey; color:white; border-radius:0;
+		background: -moz-linear-gradient(top,  #d44343 0%, #d44343 50%, #c83737 50%, #c83737 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d44343), color-stop(50%,#d44343), color-stop(50%,#c83737), color-stop(100%,#c83737)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #d44343 0%,#d44343 50%,#c83737 50%,#c83737 100%); /* Chrome10+,Safari5.1+ */
+		background: linear-gradient(to bottom,  #d44343 0%,#d44343 50%,#c83737 50%,#c83737 100%); /* W3C */
+	}
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Get Orobind Access</title>
+		<link rel="icon" type="image/ico" href="http://cdn.orobind.com/srv/static/imagesV2/favicon.ico">
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.min.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+		<link href="css/payment-access.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+		<link href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	</head>
+	
+<body>
+	<section class="topBand pageBlocks">
+		<h4 class="errorTitle"><i class="fa fa-exclamation-circle"></i> Looks like something went wrong. Try again.</h4>
+	</section>
+	<div class="wrapper">
+		<section class="newPayment pageBlocks">
+			<div class="choiceRow">
+			</div>
+		</section>
+	</div>
+	<div class="wrapper2">
+		<section class="newPayment pageBlocks">
+			<div class="choiceRow">
+			</div>
+			<div class="paymentRow">
+				<h4 class="tableTitle">Current Balance</h4>
+				<table class="currentPlan">
+				</table>
+				<h4 class="tableTitle">Chosen Plan</h4>
+				<table class="summaryTable">
+				</table>
+				<form class="submitForm" method="POST" action="/access/paymentsbmt">
+					<input type="hidden" name="code" value="123">
+					<input type="hidden" name="id" value="123">
+					<input type="hidden" class="subCodeContainer" name="subscribeCode" value="">
+					<div class="formWrap">
+						<button class="backCta"><i class="fa fa-angle-left"></i>&nbsp;&nbsp;Other plans</button>
+						<button type="submit" class="pageCta">Proceed&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
+	<div class="modal">&nbsp;</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/payment-access.js"></script>
+</html>

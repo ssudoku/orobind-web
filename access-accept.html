@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Get Orobind Access</title>
+		<link rel="icon" type="image/ico" href="http://cdn.orobind.com/srv/static/imagesV2/favicon.ico">
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.min.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+		<link href="css/accept.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	</head>
+	
+<body>
+	<h1 class="pageTitle"><img class="titleImage" src="http://cdn.orobind.com/srv/static/imagesV2/logo-white.png" height="30"> Access</h2>
+	<div class="acceptWrap">
+		<div class="acceptInner">
+			<form id="acceptForm">
+				<h3>Enter User's Access Code</h3>
+				<input id="code" name="code" placeholder="Access Code" type="text">
+				<input type="hidden" name="time">
+				<input type="hidden" name="userCode" value="">
+				<button type="submit" class="btn">Accept</button>
+			</form>
+		</div>
+	</div>
+	<div class="errorMessages">
+		<h4 class="errorTitle">Error Occured!</h4>
+		<p class="messageBody">
+			Error Code <span class="errorCode"></span>:&nbsp;<span class="errorText"></span>
+		</p>
+		<p class="specialError">
+		</p>
+	</div>
+	<div class="successMessages">
+		<h4 class="errorTitle">Success!</h4>
+		<p class="messageBody">
+			User pass accepted successfully
+		</p>
+		<p class="specialError">
+		</p>
+	</div>
+	<div class="modal">&nbsp;</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+var urlAccept = '/api/access/acceptaccessrequest?';
+var d = new Date(); var tm = '';
+	$(document).ready(function() {
+		tm += d.getFullYear() + '-' + parseInt(d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+		$('#acceptForm input[name="time"]').val(tm);
+	});
+	$('#acceptForm .btn').click(function(e){
+		e.preventDefault(); e.stopPropagation();
+
+		tm += d.getFullYear() + '-' + parseInt(d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+		$('#acceptForm input[name="time"]').val(tm);
+
+		var form = $(this).parent('form');
+		var code = form.find('#code');
+		var time = form.find('input[name="code"]');
+
+		if(!code.val() || code.val().length < 10)
+		{
+			code.addClass('error').focus();
+			return false;
+		}
+		else
+		{
+			code.removeClass('error');
+			var status = submitRequest(form);
+			if(status && status["responseCode"] && status["responseCode"]==1000)
+			{
+				$('.errorMessages').hide();
+				$('.successMessages').fadeIn(250);
+				form[0].reset();
+				setTimeout(function(){
+					$('.successMessages').fadeOut(250);
+				},5000);
+			}
+			else if(status && status["responseCode"])
+			{
+				errorHandler({"mode":"CODE","error":status});
+			}
+		}
+	});
+	function submitRequest(form)
+	{
+		var code = form.find('#code').val();
+		var userCode = form.find('input[name="userCode"]').val();
+		var time = form.find('input[name="time"]').val();
+
+		var url = urlAccept;
+		var data = {"userCode":userCode,"code":code,"time":time};
+		//var X = {"response":"Session is already Cancelled. Please generate another access pass.","responseCode":"1001","status":null};
+		var X = getData({"url":url,"data":data});
+		return X;
+	}
+	// Base AJAX function for getting the json from the server
+	function getData(obj) {
+	    var result = null;
+	    $.ajax({
+	        url: obj["url"],
+	        type: 'post',
+	        data: obj["data"],
+	        dataType: 'json',
+	        success: function(d) {
+				result = d;
+			},
+			error: function(xhr, status, thrown)
+			{
+				errorHandler({"error":thrown,"mode":"AJAX"});
+			}
+	    });
+	    return result;
+	}
+	function errorHandler(obj)
+	{
+		$('.successMessages').hide();
+		if(obj && obj["mode"])
+		{
+			switch(obj["mode"])
+			{
+				case "AJAX":
+					$('.errorMessages .specialError').text('');
+					$('.errorMessages .specialError').text(obj["error"]).show();
+					$('.errorMessages .messageBody').hide();
+					$('.errorMessages').fadeIn(250);
+				break;
+				case "CODE":
+					$('.errorMessages .specialError').hide().text('');
+					$('.errorMessages .messageBody').find('.errorCode').text(obj["error"]["responseCode"]);
+					$('.errorMessages .messageBody').find('.errorText').text(obj["error"]["response"]);
+					$('.errorMessages .messageBody').show();
+					$('.errorMessages').fadeIn(250);
+				break;
+			}
+		}
+	}
+</script>
+<script type="text/javascript">
+//var urlAccept = '/access/acceptaccessrequest?';
+var urlAccept = '/access/acceptrequest/post?';
+var d = new Date(); var tm = '';
+    $(document).ready(function() {
+        tm += d.getFullYear() + '-' + parseInt(d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+        $('#acceptForm input[name="time"]').val(tm);
+    });
+    $('#acceptForm .btn').click(function(e){
+        e.preventDefault(); e.stopPropagation();
+
+        tm += d.getFullYear() + '-' + parseInt(d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+        $('#acceptForm input[name="time"]').val(tm);
+
+        var form = $(this).parent('form');
+        var code = form.find('#code');
+        var time = form.find('input[name="code"]');
+
+        if(!code.val() || code.val().length < 5)
+        {
+            code.addClass('error').focus();
+            return false;
+        }
+        else
+        {
+            code.removeClass('error');
+            var status = submitRequest(form);
+            if(status && status["responseCode"] && status["responseCode"]==1000)
+            {
+                $('.errorMessages').hide();
+                $('.successMessages').fadeIn(250);
+                form[0].reset();
+                setTimeout(function(){
+                    $('.successMessages').fadeOut(250);
+                },5000);
+            }
+            else if(status && status["responseCode"])
+            {
+                errorHandler({"mode":"CODE","error":status});
+            }
+        }
+    });
+    function submitRequest(form)
+    {
+        var code = form.find('#code').val();
+        var userCode = form.find('input[name="userCode"]').val();
+        var time = form.find('input[name="time"]').val();
+
+        var url = urlAccept;
+        var data = {"userCode":userCode,"code":code,"time":time};
+        var X = JSON.parse('{\"response\":\"Session is already Consumed.\",\"responseCode\":\"1001\"}');
+        //var X = getData({"url":url,"data":data});
+        return X;
+    }
+    // Base AJAX function for getting the json from the server
+    function getData(obj) {
+        var result = null;
+        $.ajax({
+            url: obj["url"],
+            type: 'GET',
+            data: obj["data"],
+            dataType: 'json',
+            success: function(d) {
+                result = d;
+            },
+            error: function(xhr, status, thrown)
+            {
+                errorHandler({"error":thrown,"mode":"AJAX"});
+            }
+        });
+        return result;
+    }
+    function errorHandler(obj)
+    {
+        $('.successMessages').hide();
+        if(obj && obj["mode"])
+        {
+            switch(obj["mode"])
+            {
+                case "AJAX":
+                    $('.errorMessages .specialError').text('');
+                    $('.errorMessages .specialError').text(obj["error"]).show();
+                    $('.errorMessages .messageBody').hide();
+                    $('.errorMessages').fadeIn(250);
+                break;
+                case "CODE":
+                    $('.errorMessages .specialError').hide().text('');
+                    $('.errorMessages .messageBody').find('.errorCode').text(obj["error"]["responseCode"]);
+                    $('.errorMessages .messageBody').find('.errorText').text(obj["error"]["response"]);
+                    $('.errorMessages .messageBody').show();
+                    $('.errorMessages').fadeIn(250);
+                break;
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,330 @@
+@import "definitions";
+@import "popup";
+@import "grid";
+
+body {
+	background:#f7f7f7; width:100%; overflow-x:hidden;
+}
+.hidden {
+	display:none;
+}
+.wrapper, .wrapper2 {
+	position:relative; right:0; transition:right 0.5s ease-in-out;
+	width:100%; box-sizing:border-box; padding:10px 20px; margin:auto;
+}
+.wrapper2 {
+	display:none; padding-bottom: 75px;
+	.newPayment {
+		margin-top:0;
+	}
+}
+@media screen and (min-width:768px) {
+	.wrapper, .wrapper2 {
+		width:540px; padding:0;
+	}
+}
+@media screen and (min-width:992px) {
+	.wrapper, .wrapper2 {
+		width:760px;
+	}
+}
+.pageBlocks {
+	position:relative;
+}
+.centerWrap {
+	width:100%; margin:auto;
+}
+.topBand {
+	background:$primary-color;; padding:20px 0; display:none;
+	.centerLogo {
+		height:32px; width:auto; margin:auto; display:block;
+	}
+	.sectionTitle, .subTitle {
+		color:white; margin-top:6px; font-weight:300; text-align:center; margin-bottom:0;
+	}
+	.subTitle {
+		font-weight:400; font-size:1.5em;
+	}
+	.errorTitle {
+		color:white; margin-top:6px; text-align:center; margin-bottom:0; display:none;
+		font-weight:400; font-size:1.5em;
+	}
+}
+body.error {
+	.topBand {
+		display:block;
+		.errorTitle {
+			display:block;
+		}
+		.subTitle {
+			display:none;
+		}
+	}
+}
+body.paymentSuccess {
+	.topBand {
+		.subTitle {
+			.fa {
+				font-size:0.75em;
+			}
+		}
+	}
+}
+.newPayment {
+	text-align:center; margin-top:25px;
+	.sectionTitle {
+		margin-bottom:15px; font-weight:normal;
+	}
+	.subTitle {
+		font-weight:bold; color:$secondary-color;
+		.fa-rupee {
+			font-size:0.875em;
+		}
+	}
+	.divider {
+		width:100%; height:auto; margin:15px auto; display:block; max-width:481px;
+	}
+	.choiceRow {
+		.chosen {
+			width:100%; box-shadow:0 0 3px 0 rgba($soft-grey,0.3); border-radius:5px;
+			margin:15px 0; background:white; padding:0; box-sizing:border-box;
+			transition:all 0.3s ease; text-align:left; position:relative; bottom:0;
+			.accented {
+				display:block; background:url("http://cdn.orobind.com/srv/static/imagesV2/orobind-black-diamond.png");
+				border-radius:5px; padding:10px 0 5px 0; background-color:$hard-grey; color:white; width:100%;
+			}
+			.planMain {
+				font-size:1.25em; padding-bottom:10px; border-bottom:2px solid rgba(white,0.2);
+				display:block; width:85px; margin:auto; text-align:center;
+			}
+			.discounted {
+				font-size:3em; font-weight:bold; display:block; text-align:center;
+				i {
+					font-size:18px; position:relative; bottom:18px; margin-right:-6px;
+				}
+			}
+		}
+		.plan {
+			width:100%; box-shadow:0 0 3px 0 rgba($soft-grey,0.3); border-radius:5px;
+			margin:15px 0; background:white; padding:10px 15px; box-sizing:border-box;
+			transition:all 0.3s ease; text-align:left; position:relative; bottom:0; cursor:pointer;
+			&.active {
+				background:#46bdd6; color:white;
+				.proceed, .actual, .discounted, .discount {
+					color:white;
+				}
+			}
+			&:hover {
+				bottom:3px;
+			}
+			.suggestedImg {
+				position:absolute; margin:auto; left:0; right:0; top:-18px;
+				z-index:11; height:36px; width:auto;
+			}
+			.planMain {
+				float:left;
+			}
+			.planRow {
+				position:relative; overflow:hidden;
+			}
+			.discount {
+				color: $soft-grey; position:absolute; display:block; margin:auto; left:0; right:0; text-align:center;
+			}
+			.proceed {
+				color: $secondary-color; margin-left:5px;
+			}
+			.discounted {
+				font-weight:bold; float:right;
+			}
+			.chooseSuggestedPlan {
+				background:$primary-color; color:white; transition:background-color 0.4s ease;
+				font-size:1.25em; display:block; margin:10px auto 0 auto; border-radius:100px; width:150px;
+				i {
+					font-size:0.875em; margin-left:5px;
+				}
+				&:hover {
+					background:$dark-grey;
+				}
+			}
+			&.suggested {
+				padding:0 0 15px 0;
+				.planRow {
+				}
+				.accented {
+					background:url("http://cdn.orobind.com/srv/static/imagesV2/orobind-black-diamond.png"); color:white; width:100%;
+					border-top-left-radius:5px; border-top-right-radius:5px; padding:30px 0 5px 0; background-color:$hard-grey;
+				}
+				.planMain {
+					font-size:1.25em; padding-bottom:10px; border-bottom:2px solid rgba(white,0.2);
+					display: block; width: 85px; margin: auto; text-align: center; float:none;
+				}
+				.discounted {
+					font-size:3em; float:none; display:block; text-align:center;
+					i {
+						font-size:18px; position:relative; bottom:18px; margin-right:-6px;
+					}
+				}
+				.discount {
+					margin:5px auto; display:block; text-align:center; font-size:1.125em; position:static;
+				}
+			}
+		}
+	}
+	.submitForm {
+		display:none;
+	}
+	.tableTitle {
+		font-size:0.75em; text-align:Center; margin:5px 0; color:#54cdbc;
+		line-height:1; font-weight:normal; text-transform:uppercase;
+	}
+	.currentPlan {
+		margin:10px auto; width:100%; border-radius:10px;
+		.fa-rupee{
+			font-size:0.875em;
+		}
+		td {
+			border:1px solid $light-grey; font-size:0.9375em; padding:6px 10px; color:$soft-grey; background:white;
+			&:last-child {
+				text-align:right; color:$hard-grey; font-weight:bold;
+			}
+		}
+	}
+	.summaryTable {
+		margin:10px auto; width:100%; border-radius:10px; display:none;
+		td {
+			border:1px solid $light-grey; font-size:0.9375em; padding:6px 10px; color:$soft-grey; background:white;
+			&:last-child {
+				text-align:right; color:$hard-grey;
+			}
+			.fa-rupee{
+				font-size:0.875em;
+			}
+		}
+		tr:last-child {
+			td:last-child {
+				color:$dark-grey; font-weight:bold;
+			}
+		}
+	}
+	.formWrap {
+		text-align:center; position:fixed; bottom:0; left:0; width:100%; overflow:hidden;
+		.pageCta, .backCta {
+			width:50%; height:50px; background:$primary-color; color:white; float:left;
+			font-size:1.25em; border-radius:0; display:block; font-family:$body-font;
+			&.backCta {
+				background:$hard-grey;
+			}
+		}
+	}
+}
+.paymentWelcome {
+	.paymentContainer{
+		background:lighten(complement($secondary-color),41%); margin-top:30px; padding-bottom:30px;
+	}
+}
+.paymentMain {
+	background:white;
+}
+@media screen and (min-width:768px) {
+	.topBand {
+		.sectionTitle {
+			font-size:2.75em; margin-top:35px;
+		}
+		.subTitle {
+			margin-bottom:30px;
+		}
+		.errorTitle {
+			margin-bottom:30px;
+		}
+	}
+	.newPayment {
+		.formWrap {
+			margin:25px auto; position:static; display:block; width:480px;
+			.backCta {
+				margin-right:6%;
+			}
+			.pageCta, .backCta {
+				width:47%; border-radius:5px;
+			}
+		}
+		.topRow {
+			margin-bottom:15px;
+			p {
+				margin:0;
+			}
+			&.centerWrap{
+				width:648px;
+			}
+		}
+		.choiceRow {
+			.chosen {
+				width:480px; margin:15px auto;
+			}
+			.plan {
+				display:inline-block; width:150px; margin:0 15px 0 0;
+				.planRow {
+					height:200px; position:relative;
+				}
+				&:last-child {
+					margin:0;
+				}
+				.planMain, .discount, .pricing, .discounted, .proceed, .actual {
+					position:static; display:block; text-align:center; margin:20px 0;
+					font-size:1.25em; float:none; width:100%; text-align:center;
+				}
+				.br {
+					display:block;
+				}
+				.value {
+					font-size:1.25em;
+				}
+				.discounted {
+					position:absolute; left:0; bottom:0; margin:0;
+				}
+				.proceed {
+					margin-bottom:10px;
+				}
+				&.suggested {
+					display:block; width:480px; margin:auto auto 20px;
+					.planRow {
+						height:auto;
+					}
+					.discounted {
+						position:static;
+					}
+				}
+			}
+		}
+		.sectionTitle {
+			margin-bottom:5px;
+		}
+		.summaryTable {
+			width:480px; margin:15px auto; font-size:1.125em;
+		}
+		.currentPlan {
+			width:480px; font-size:1.125em;
+		}
+	}
+	.centerWrap {
+		width:500px;
+	}
+	.paymentWelcome {
+		.sectionTitle {
+			margin-top:0px;
+		}
+		.userInfo {
+			margin-top:0px; font-size:1.25em;
+			padding-bottom:20px; padding-top:20px;
+		}
+	}
+}
+@media screen and (min-width:992px) {
+	.centerWrap {
+		width:720px;
+	}
+}
+@media screen and (min-width:1280px) {
+	.centerWrap {
+		width:840px;
+	}
+}

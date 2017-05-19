@@ -1,0 +1,68 @@
+@mixin vS($s,$p) {
+	-moz-#{$s}: #{$p};
+	-webkit-#{$s}: #{$p};
+	-ms-#{$s}: #{$p};
+	#{$s}: #{$p};
+}
+@mixin vP($s,$p) {
+	#{$s}: -moz-#{$p};
+	#{$s}: -webkit-#{$p};
+	#{$s}: -ms-#{$p};
+	#{$s}: #{$p};
+}
+@mixin flex() {
+	@include vS(display,flex);
+}
+@mixin flexDir($o) {
+	@include vP(flex-direction,#{$o});
+}
+@mixin justify($o) {
+	@include vP(justify-content,#{$o});
+}
+@mixin align($o) {
+	@include vP(align-items,#{$o});
+}
+@mixin bb() {
+	@include vP(box-sizing,border-box);
+}
+
+.superSelect {
+	position: relative; cursor: pointer; border: 1px solid $light-grey;
+	height: 50px; margin: auto; text-align: left; max-width: 300px;
+	box-sizing: border-box;
+	background: transparent url("http://cdn.orobind.com/srv/static/imagesV2/dropDownArrow.gif") no-repeat scroll right top;
+}
+.superSelectDropDown {
+	display: none; position: absolute; right: 0; top:calc(100% + 5px);
+	padding: 10px; background: white; box-shadow: 0 0 5px 0 rgba($hard-grey,0.3);
+	z-index: 11; min-width: 120px; text-align: center; width: 100%; box-sizing: border-box;
+}
+.superSelectDefault {
+	 padding: 12px 15px;
+}
+.superSelectDropDownListItem {
+	border-bottom: 1px solid $light-grey; padding: 10px 0;
+	white-space: nowrap; color: $hard-grey;
+	&:first-child {
+		padding-top: 0;
+	}
+	&:last-child {
+		padding-bottom: 0; border-bottom: 0;
+	}
+	&:hover {
+		color: #F4593C;
+	}
+}
+.superSelectModal {
+	display: none; position: fixed; width: 100%; height: 100vh; transition: all 0.3s ease;
+	background: rgba(black,0.75); z-index: 99; left: 0; top: 0;
+	&.active {
+		@include flex(); @include justify(center); @include align(center);
+	}
+	.superSelectModalInner {
+		background: white; width: 300px; box-sizing: border-box; text-align: center;
+	}
+	.superSelectDropDownListItem {
+		padding: 15px 0;
+	}
+}

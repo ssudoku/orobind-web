@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Fitness Assessment</title>
+		<link rel="icon" type="image/ico" href="http://cdn.orobind.com/srv/static/imagesV2/favicon.ico">
+		<link href="css/assessment.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Raleway:400,600' rel='stylesheet' type='text/css'>
+		<link href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	</head>
+
+<body>
+	<section class="header">
+		<h1 class="pageTitle">Orobind Fitness Assessment</h1>
+	</section>
+	<section class="formBlock" id="part1">
+		<div class="formWrap">
+			<h3 class="formTitle">Enter user's registered email address</h3>
+			<form class="assessmentForm" id="setUser" action="" method="post">
+				<input type="text" placeholder="Email address" class="fields" id="userEmail">
+				<p class="errorText" data-target="userEmail">Invalid email. Enter proper email address.</p>
+				<button class="cta part1">Start Assessment &#10140;</button>
+			</form>
+		</div>
+	</section>
+	<section class="formBlock" id="part2">
+		<form id="statsForm" action="" method="get">
+			<div class="formWrap">
+				<h3 class="formTitle">User Selected</h3>
+				<div class="flexRow sbetween">
+					<p class="label">Name</p>
+					<input type="text" placeholder="Name" class="fields" id="userName">
+				</div>
+				<div class="flexRow sbetween">
+					<p class="label">Mobile</p>
+					<input type="text" placeholder="Phone" class="fields" id="userMobile">
+				</div>
+				<div class="flexRow sbetween">
+					<p class="label">Email</p>
+					<input type="text" placeholder="Email" class="fields" id="userEmail">
+				</div>
+				<div class="flexRow sbetween">
+					<p class="label">Height</p>
+					<input type="text" placeholder="in cm" class="fields" id="userHeight">
+				</div>
+				<div class="flexRow sbetween">
+					<p class="label">Weight</p>
+					<input type="text" placeholder="in Kg" class="fields" id="userWeight">
+				</div>
+				<div class="flexRow sbetween">
+					<p class="label">Date of birth</p>
+					<input type="text" placeholder="DD-MM-YYYY" class="fields" id="userDob">
+				</div>
+				<div class="flexRow sbetween">
+					<p class="label">Gender</p>
+					<select class="fields" id="userSex">
+						<option data-value="f" value="f">Female</option>
+						<option data-value="m" value="m">Male</option>
+					</select>
+				</div>
+				<button class="cta half back">Change User</button>
+				<button class="cta half proceed">Confirm &#10140;</button>
+			</div>
+		</form>
+	</section>
+	<section class="formBlock" id="part3">
+		<div class="formWrap">
+			<h3 class="formTitle">Stamina</h3>
+			<form class="assessmentForm" id="staminaQs" action="" method="post">
+				<button class="cta back half">Back</button>
+				<button class="cta part2 half">Next &#10140;</button>
+			</form>
+		</div>
+	</section>
+	<section class="formBlock" id="part4">
+		<div class="formWrap">
+			<h3 class="formTitle">Strength</h3>
+			<form class="assessmentForm" id="strengthQs" action="" method="post">
+				<div class="questionBlock">
+					<h4 class="question hard">1. How many <span class="emphasize">Knee Pushups</span> was he able to do?</h4>
+					<input type="text" placeholder="How many seconds" class="fields" id="kneePushups">
+				</div>
+				<div class="questionBlock">
+					<h4 class="question hard">2. How many <span class="emphasize">Half Squats</span> was he able to do?</h4>
+					<input type="text" placeholder="How many seconds" class="fields" id="halfSquats">
+				</div>
+				<div class="questionBlock">
+					<h4 class="question hard">3. For how many seconds was he able to hold <span class="emphasize">Plank</span>?</h4>
+					<input type="text" placeholder="How many seconds" class="fields" id="plank">
+				</div>
+				<button class="cta back half">Back</button>
+				<button class="cta part3 half">Next &#10140;</button>
+			</form>
+		</div>
+	</section>
+	<section class="formBlock" id="part5">
+		<div class="formWrap">
+			<h3 class="formTitle">Flexibility</h3>
+			<form class="assessmentForm" id="flexibilityQs" action="" method="post">
+				<div class="questionBlock">
+					<h4 class="question hard">1. Ask the user to perform <span class="emphasize">Toe Touch</span> and hold that position for 10 seconds. After 10 seconds, where were the hands?</h4>
+					<input type="radio" name="q1" id="q1a"><label for="q1a">Above Shin</label><br>
+					<input type="radio" name="q1" id="q1b"><label for="q1b">Shin</label><br>
+					<input type="radio" name="q1" id="q1c"><label for="q1c">Ankle</label><br>
+					<input type="radio" name="q1" id="q1d"><label for="q1d">Toes</label><br>
+					<input type="radio" name="q1" id="q1e"><label for="q1e">Floor</label>
+				</div>
+				<div class="questionBlock">
+					<h4 class="question hard">2. Ask the user to perform <span class="emphasize">Side Bend Toe Touch</span> and hold that position for 10 seconds. After 10 seconds, where were the hands?</h4>
+					<input type="radio" name="q2" id="q2a"><label for="q2a">Knee</label><br>
+					<input type="radio" name="q2" id="q2b"><label for="q2b">Below Knee</label><br>
+					<input type="radio" name="q2" id="q2c"><label for="q2c">Shin</label><br>
+					<input type="radio" name="q2" id="q2d"><label for="q2d">Ankle</label><br>
+					<input type="radio" name="q2" id="q2e"><label for="q2e">Toe</label>
+				</div>
+				<button class="cta back half">Back</button>
+				<button class="cta part4 half">Finish &#10003;</button>
+			</form>
+		</div>
+	</section>
+	<section class="formBlock" id="part6">
+		<div class="formWrap">
+			<h3 class="formTitle">Final Score</h3>
+			<p class="announce">Score for <span class="name">User</span> was </p>
+			<p class="score"><span class="value">56.12</span>%</p>
+			<button class="cta reset">Do Another Test</button>
+		</div>
+	</section>
+</body>
+
+	<!--include jquery-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/fitness.js"></script>
+
+</html>

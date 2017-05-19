@@ -1,0 +1,246 @@
+@import "definitions";
+@import "popup";
+@import "grid";
+
+body {
+	background:url("../images/contacts-bg.jpg"); width:100%; overflow-x:hidden;
+}
+.sidenav {
+	width:260px; height:1600px; background:$primary-color; color:white; padding:15px 30px;
+	position:fixed; z-index:20; right:-260px; top:0; box-sizing:border-box; transition:right 0.5s ease-in-out;
+	&.active {
+		right:0;
+	}
+	.sidenavlist {
+		a {
+			display:block; padding:20px 10px; text-decoration:none;
+			color:white; border-bottom:1px solid white;
+			font-size:1.125em;
+			&:last-child {
+				border:2px solid white; font-weight:bold;
+			}
+			&:nth-last-child(2) {
+				border-bottom:0;
+				font-weight:bold;
+			}
+		}
+		.sidedownload {
+			color:white; padding:10px; text-align:center;
+		}
+	}
+}
+.wrapper {
+	position:relative; right:0; transition:right 0.5s ease-in-out;
+	&.active {
+		right:260px;
+		.topNav {
+			&.sticky {
+				transition:left 0.5s ease-in-out; left:-260px;
+			}
+		}
+	}
+}
+.pageBlocks {
+	position:relative;
+}
+.sectionTitle {
+	font-size:2em; font-weight:bold; text-align:center; margin-top:25px; margin-bottom:12px; color:$dark-grey;
+	&.light {
+		color:white;
+	}
+}
+hr.narrowcenter {
+	display:block; width:250px; margin:auto; margin-bottom:20px;
+	border: 2px solid $hard-grey; border-width:0 0 2px 0;
+	&.light {
+		border-color:white;
+	}
+}
+.hidden {
+	display:none;
+}
+.topNav {
+	transition: all 1s ease;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	backface-visibility:hidden;
+	text-align:right; padding-top:25px;
+	img {
+		display:inline-block; vertical-align:middle;
+	}
+	a {
+		transition:border-color 0.5s ease, padding 0.2s ease-in-out;
+		display:none; color:white; text-decoration:none; vertical-align:middle;
+		font-size:1em; padding:10px 0; margin:0 20px 0 10px;
+		border-bottom:2px solid transparent;
+		&.current {
+			border-bottom:3px solid rgba($soft-grey,0.3);
+		}
+	}
+	.animate {
+		transition: 0.5s ease;
+		text-shadow: 0 0 25 rgba(0,0,0,0);
+		&.topDownload:hover {
+			padding-left:30px; padding-right:30px; border-color:transparent;
+			box-shadow:inset 0px 0px 50px 50px $primary-color; color:white;
+			text-shadow: 0 0 5px rgba(white,0.5);
+		}
+		&:hover {
+			text-shadow: 0 0 5px rgba(white,1); padding-right:20px; padding-left:20px;
+		}
+	}
+	.menutoggle {
+		background:none; color:white; padding:10px 15px;
+	}
+	.topLogo {
+		display:inline-block; margin:0; padding:0 15px;
+		img {
+			height:36px; width:auto;
+		}
+	}
+	.callback {
+		font-weight:bold;
+	}
+	.topDownload {
+		border:2px solid white;
+		padding:10px 15px; font-weight:bold; box-shadow:inset 0px 0px 0px 0px $primary-color;
+		img {
+			height:36px; width:auto;
+			margin-right:25px;
+		}
+	}
+	&.sticky {
+		background:white; padding:10px 0; border-bottom:1px solid darken($light-grey,2%);
+		position:fixed; top:0; left:0; width:100%; z-index:99;
+		.menutoggle {
+			color:$hard-grey;
+		}
+		a {
+			color:$hard-grey; 
+		}
+		.topDownload {
+			border:0; background:transparent; color:$primary-color; font-weight:bold; padding:10px 0;
+			img {
+				margin-right:15px;
+			}
+		}
+		.topLogo {
+			img {height:25px; width:auto;}
+		}
+	}
+}
+.callbackModal {
+	position:fixed; z-index:999; display:none; top:0; left:0; right:0; bottom:0; margin:auto;
+	background:#F5F5F5; padding:20px; width:300px; height:425px; box-sizing:border-box;
+	.fieldRow {
+		position:relative;
+		.errorText {
+			position:absolute; z-index:10; display:none;
+			right:10px; top:11px; color:#CCC; font-size:0.875em;
+		}
+		.error + .errorText {
+			display:initial;
+		}
+	}
+	.post {
+		display:none;
+	}
+	&.hit, &.miss {
+		h2, .content {
+			display:none;
+		}
+		.callbackForm {
+			display:none;
+		}
+	}
+	&.miss {
+		height:360px;
+		form.callbackForm {
+			display:initial;
+		}
+		.miss {
+			display:block;
+		}
+	}
+	p.miss, p.hit {
+		margin-bottom:25px;
+	}
+	&.hit {
+		height:205px;
+		.hit {
+			display:block;
+		}
+	}
+	.modalTitle {
+		line-height:1; margin: -20px -20px 5px -20px; padding:20px;
+		background:white; border-bottom:1px solid #DDD; text-align:center;
+	}
+	button.hit {
+		background:$primary-color; color:white; border-radius:0; width:100%; margin-top:25px;
+		padding:10px 0; text-align:center; font-size:1.25em; font-weight:bold;
+	}
+	.closeCallback {
+		position:absolute; right:20px; top:20px; line-height:1; color:$soft-grey; cursor:pointer;
+	}
+	.callbackField {
+		display:block; width:100%; box-sizing:border-box;
+		font-size:1.25em; padding:10px 0 10px 15px; margin-bottom:10px;
+		&.error {
+			border:2px solid $primary-color; box-sizing:border-box;
+		}
+	}
+	.callbackCTA {
+		background:$primary-color; color:white; border-radius:0; width:100%; margin-top:25px;
+		display:block; padding:10px 0; text-align:center; font-size:1.25em; font-weight:bold;
+	}
+	.content {
+		margin-top:10px; margin-bottom:15px; line-height:1.8;
+	}
+	h2 {
+		margin-bottom:25px;
+	}
+}
+@media screen and (min-width:768px) {
+	.home {
+		min-height:684px;
+	}
+	.callbackModal {
+		width:380px; height:400px;
+	}
+	.success {
+		.centerWrap {
+			.story {
+				&:first-child {
+					padding-right:40px;
+				}
+				&:last-child {
+					padding-left:40px;
+				}
+			}
+		}
+	}
+	.sectionTitle {
+		font-size:2.75em; font-weight:normal;
+	}
+	.centerWrap {
+		width:600px;
+	}
+}
+@media screen and (min-width:992px) {
+	.centerWrap {
+		width:840px;
+	}
+	.topNav {
+		.menutoggle {
+			display:none;
+		}
+		a {
+			display:inline-block;
+		}
+	}
+}
+@media screen and (min-width:1280px) {
+	.centerWrap {
+		width:1024px;
+	}
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>#thegoodfight starts now!</title>
+		<link rel="icon" type="image/ico" href="images/favicon.ico">
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.min.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+		<link href="css/payment-new.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+		<link href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	</head>
+	
+<body class="user-app">
+	<div class="wrapper">
+		<section class="topBand pageBlocks">
+			<img src="images/logo-white.png" class="centerLogo" data-switch="images/logo-color.png">
+			<h2 class="sectionTitle">Renew your subscription</h2>
+			<h4 class="errorTitle"><i class="fa fa-exclamation-circle"></i> Looks like something went wrong. Try again.</h4>
+		</section>
+		<section class="newPayment pageBlocks">
+			<div class="topRow centerWrap">
+				<p class="greet">Greetings <span class="userName">Shubhanshu</span>.</p>
+				<p class="credits">Your balance: <span class="creditBalance">30 Credits</span></p>
+			</div>
+			<div class="choiceRow">
+				<h2 class="sectionTitle">Choose a plan</h2>
+				<table class="planChoice">
+					<tbody>
+						<tr>
+							<td> </td>
+							<td>Lasts for</td>
+							<td>Actual Price</td>
+							<td>Discount</td>
+							<td>You Pay</td>
+							<td> </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="paymentRow">
+				<table class="summaryTable">
+				</table>
+				<form class="submitForm" method="POST" action="/paymentsbmt">
+					<input type="hidden" name="code" value="">
+					<input type="hidden" name="id" value="">
+					<input type="hidden" class="subCodeContainer" name="subscribeCode" value="">
+					<!--<div class="promoForm">
+						<input type="text" class="promoInput" placeholder="Promo Code">
+						<button class="promoCta">Apply&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+					</div>-->
+					<div class="formWrap">
+						&nbsp;<button class="pageCta">Proceed to Checkout&nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>
+						<br><br><br>
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
+	<div class="modal">&nbsp;</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/payment-new.js"></script>
+</html>
